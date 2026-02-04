@@ -8,7 +8,10 @@
 
 <HEAD>
 <style type="text/css">
-<!--a{text-decoration:none}//-->
+a { text-decoration: none; }
+  
+  /* This forces the color change even if a font tag is present */
+  a:hover, a:hover font {color: red !important;}
 </style>
 
 <style type="text/css">
@@ -139,6 +142,15 @@
     </div>
 <div class="content">
   
+<font color="#000000" face="monotype corsiva" size="5">
+                                         <script language="JavaScript">
+                                             var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                                             var monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                                             var dt = new Date();
+                                             document.write(dayNames[dt.getDay()] + ", " + monthNames[dt.getMonth()] + " " + dt.getDate() + ", " + dt.getFullYear());
+                                         </script>
+                                    </font>
+<br />
 
     <h3>Resident Resources and Service Providers</h3>
   
@@ -195,6 +207,14 @@
 </table>
 
 
+<div align="center" style="margin-top: 20px;">
+          <font color="#a6acaf" face="Great Vibes" size="4">
+            Site Modified: 
+            <script type="text/javascript">
+              document.write(document.lastModified);
+            </script>
+          </font>
+        </div>
 
 
 
