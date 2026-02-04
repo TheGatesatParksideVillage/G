@@ -8,11 +8,13 @@
 
 <HEAD>
 <style type="text/css">
-<!--a{text-decoration:none}//-->
+  a { text-decoration: none; }
+  
+  /* This forces the color change even if a font tag is present */
+  a:hover, a:hover font {color: red !important;}
 </style>
 
 <style type="text/css">
-<!---a:hover{color:red; }--->
 </style>
 
 </HEAD>
@@ -21,19 +23,11 @@
 
 <div align="center">
 
-<table border= "5" bordercolor= "#794B15 "  bgcolor="#794020" cellspacing = "1" Cellspacing = "1">
-
-
-
-<!-*************************************** Begining of Top Bar  *****************************************************>
+<table border= "5" bordercolor= "#794B15 "  bgcolor="#794020" cellspacing = "1" cellpadding = "1">
 
 <tr>  <td colspan="2" valign="top" align = "Center">
 
 <img src="gates-top.png" width= "900" height = "28">
-
-<!-*************************************** End of Top Bar  *****************************************************>
-
-
 
 <table background="" bgcolor=" #ffffff" border="1" cellpadding="10" cellspacing="5" width="896">
  <tbody>
@@ -51,25 +45,15 @@
 <table background="gates-sidebar.png" width="265" Height="900" cellspacing="0" cellpadding="0" Border= "0" bordercolor="#F2F3F4">
 <tr> <td valign="top" >
 
-<!-*************************************** Begining of logo  *****************************************************>
-
-
-
- <center>
+<center>
 <img src="gates-logo_oval.png" width="260" height = "156" />
-
-</a>
 </center>
-<!-*************************************** End of logo  *****************************************************>
-
 <br>
 
 
 
 
 
-
-<!-*************************************** Begining of 1st Menu on Left*****************************************************>
 
 <table border="5" bordercolor="#794B15 " cellpadding="0" width="260">
  <tbody>
@@ -79,35 +63,35 @@
 
 <td bgcolor="#ffffff" width="200">
  <p align="Left"><b><a class="hypernavtxt" href="index.html" 
-><font color="#000000" face="Times" size="+1">Home</font></a></font></b></p></td></tr><tr>
+><font color="#000000" face="Times" size="+1">Home</font></a></b></p></td></tr><tr>
 
 
 <td bgcolor="#ffffff" width="200">
  <p align="Left"><b><a class="hypernavtxt" href="Contact.html" 
-><font color="#000000" face="Times" size="+1">Contact</font></a></font></b></p></td></tr><tr>
+><font color="#000000" face="Times" size="+1">Contact</font></a></b></p></td></tr><tr>
 
 <td bgcolor="#ffffff" width="200">
  <p align="Left"><b><a class="hypernavtxt" href="News.html" 
-><font color="#000000" face="Times" size="+1">News</font></a></font></b></p></td></tr><tr>
+><font color="#000000" face="Times" size="+1">News</font></a></b></p></td></tr><tr>
 
 
 <td bgcolor="#ffffff" width="200">
  <p align="Left"><b><a class="hypernavtxt" href="Roster.html" 
-><font color="#000000" face="Times" size="+1">Roster</font></a></font></b></p></td></tr><tr>
+><font color="#000000" face="Times" size="+1">Roster</font></a></b></p></td></tr><tr>
 
 
 <td bgcolor="#ffffff" width="200">
  <p align="Left"><b><a class="hypernavtxt" href="Documents.html" 
-><font color="#000000" face="Times" size="+1">Forms and Documents</font></a></font></b></p></td></tr><tr>
+><font color="#000000" face="Times" size="+1">Forms and Documents</font></a></b></p></td></tr><tr>
 
 <td bgcolor="#ffffff" width="200">
  <p align="Left"><b><a class="hypernavtxt" href="Services.html" 
-><font color="#000000" face="Times" size="+1">Services</font></a></font></b></p></td></tr><tr>
+><font color="#000000" face="Times" size="+1">Services</font></a></b></p></td></tr><tr>
 
 
 <td bgcolor="#ffffff" width="200">
  <p align="Left"><b><a class="hypernavtxt" href="Directions.html" 
-><font color="#000000" face="Times" size="+1">Directions</font></a></font></b></p></td></tr><tr>
+><font color="#000000" face="Times" size="+1">Directions</font></a></b></p></td></tr><tr>
 
 
 
@@ -120,23 +104,27 @@
 </TR>
 </table>
 
-<!-*************************************** End of 1st Menu on Left*****************************************************>
-
-
 </TD> </TR>
 </table>
 
 
 
-<td valign="left"> <!-                 ****Move to the next column and align in the center ****>
-
-<!-*************************************** Begining of our Contacts *****************************************************>
-<font color="#000000" face="Times" size="+1">
+<td valign="top"> <font color="#000000" face="Times" size="+1">
   <br />
        
      
       
 <div class="content">
+<font color="#000000" face="monotype corsiva" size="5">
+                                           <script language="JavaScript">
+                                               var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                                               var monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                                               var dt = new Date();
+                                               document.write(dayNames[dt.getDay()] + ", " + monthNames[dt.getMonth()] + " " + dt.getDate() + ", " + dt.getFullYear());
+                                           </script>
+                                     </font>
+<br />
+
     <p>&nbsp;</p>
     <p align="center"><img src="Gates.png" width="512" height="275" alt= "The Gates @ Parkside Village"/></p>
     <hr size="1" />
@@ -149,8 +137,7 @@
     </ul>
     <p class="disclaimer">&nbsp;</p>
     <p>
-      <!-- end .content -->
-    </p>
+       </p>
     <p> </p>
   </div>
 
@@ -171,15 +158,9 @@
 </table>
 
 
-<!-*************************************** Begining of bottom Bar  *****************************************************>
-
 <tr>  <td colspan="2" valign="top" align = "Center">
 
 <img src="gates-top.png" width= "900" height = "28">
-
-<!-*************************************** End of bottom Bar  *****************************************************>
-
-
 
 </td>
  </tr>
@@ -190,8 +171,15 @@
  </tbody>
 </table>
 
-
-
+<div align="center" style="margin-top: 20px;">
+          <font color="#a6acaf" face="Great Vibes" size="4">
+            Site Modified: 
+            <script type="text/javascript">
+              document.write(document.lastModified);
+            </script>
+          </font>
+        </div>
+</HTML>
 
 
 
