@@ -6,7 +6,10 @@
     <title>The Gates at Parkside Village</title>
     <style type="text/css">
         a { text-decoration: none; }
-        a:hover { color: red; }
+  
+  /* This forces the color change even if a font tag is present */
+  a:hover, a:hover font {color: red !important;}
+
         body { background-color: #000000; margin: 10px; color: #000000; font-family: "Times New Roman", Times, serif; }
         .menu-table td { background-color: #ffffff; padding: 5px; }
         .content-area { background-color: #ffffff; padding: 20px; vertical-align: top; }
@@ -47,6 +50,15 @@
 
                         <td valign="top" class="content-area">
                             <center>
+<font color="#000000" face="monotype corsiva" size="5">
+                                         <script language="JavaScript">
+                                             var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                                             var monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                                             var dt = new Date();
+                                             document.write(dayNames[dt.getDay()] + ", " + monthNames[dt.getMonth()] + " " + dt.getDate() + ", " + dt.getFullYear());
+                                         </script>
+                                    </font>
+<br />
                                 <img src="thegatesatparksidevillage.png" alt="The Gates at Parkside Village" width="512" height="196" />
                             </center>
                             
@@ -88,3 +100,19 @@
 
 </body>
 </html>
+
+</table>
+<tr>
+<TD>
+<div align="center" style="margin-top: 20px;">
+          <font color="#a6acaf" face="Great Vibes" size="4">
+            Site Modified: 
+            <script type="text/javascript">
+              document.write(document.lastModified);
+            </script>
+          </font>
+        </div>
+</TR>
+</TD>
+
+
