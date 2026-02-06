@@ -7,13 +7,19 @@
     <title>The Gates at Parkside Village</title>
     <style type="text/css">
 
-a { text-decoration: none; }
-  
-  /* This forces the color change even if a font tag is present */
-  a:hover, a:hover font { 
-    color: red !important; 
-  }
-
+/* This makes the gazebo table flexible on small screens */
+@media (max-width: 600px) {
+    .mobile-table {
+        width: 100% !important;
+        max-width: 260px; /* Keeps it from getting too huge on tablets */
+    }
+}
+        a { text-decoration: none; }
+        
+        /* This forces the color change even if a font tag is present */
+        a:hover, a:hover font { 
+            color: red !important; 
+        }
 
         /* General Reset */
         body {
@@ -62,24 +68,6 @@ a { text-decoration: none; }
             text-align: center;
         }
 
-        /* Navigation Menu */
-        .nav-menu {
-            border: 5px solid #794B15;
-            background: #fff;
-            width: 100%;
-        }
-        .nav-item {
-            border-bottom: 1px solid #794B15;
-            padding: 10px;
-        }
-        .nav-item a {
-            color: #000;
-            font-weight: bold;
-            text-decoration: none;
-            display: block;
-        }
-        .nav-item:hover { background-color: #f2f3f4; }
-
         /* Feature Image Box */
         .feature-box {
             border: 5px solid #F2F3F4;
@@ -97,6 +85,14 @@ a { text-decoration: none; }
             line-height: 1.6;
         }
 
+        /* Moved the HR styling here where it belongs */
+        hr { 
+            border: 0; 
+            border-top: 2px solid red; 
+            width: 80%; 
+            margin: 20px auto; 
+        }
+
         /* Media Query for Phones */
         @media (max-width: 600px) {
             .main-container {
@@ -106,6 +102,7 @@ a { text-decoration: none; }
                 text-align: left;
             }
         }
+
     </style>
 </head>
 <body>
@@ -119,22 +116,20 @@ a { text-decoration: none; }
                 <img src="gates-logo_oval.png" width="260" alt="Logo">
             </center>
             <br>
-             <table border="5" bordercolor="#794B15" cellpadding="0" width="260" class="menu-table">
-
+            <table border="5" bordercolor="#794B15" cellpadding="0" width="260" class="menu-table">
                 <tr><td><b><a href="index.html">Home</a></b></td></tr>
-                                <tr><td><b><a href="Contact.html">Contact</a></b></td></tr>
-                                <tr><td><b><a href="News.html">News</a></b></td></tr>
-                                <tr><td><b><a href="Roster.html">Roster</a></b></td></tr>
-                                <tr><td><b><a href="Documents.html">Forms and Documents</a></b></td></tr>
-                                <tr><td><b><a href="Services.html">Services</a></b></td></tr>
-                                <tr><td><b><a href="Directions.html">Directions</a></b></td></tr>
-                            </table>
-
+                <tr><td><b><a href="Contact.html">Contact</a></b></td></tr>
+                <tr><td><b><a href="News.html">News</a></b></td></tr>
+                <tr><td><b><a href="Roster.html">Roster</a></b></td></tr>
+                <tr><td><b><a href="Documents.html">Forms and Documents</a></b></td></tr>
+                <tr><td><b><a href="Services.html">Services</a></b></td></tr>
+                <tr><td><b><a href="Directions.html">Directions</a></b></td></tr>
+            </table> 
         </aside>
 
         <main class="content">
             <div style="margin-bottom: 15px;">
-                <img src="america.gif" width="60" style="vertical-align: middle;">
+                <img src="america.gif" width="60" style="vertical-align: middle;" alt="USA Flag">
                 <span style="font-family: 'Monotype Corsiva', cursive; font-size: 1.5rem; color: #000;">
                     <script>
                         const now = new Date();
@@ -148,26 +143,36 @@ a { text-decoration: none; }
             <div class="welcome-text">
                 <h3>Welcome to The Gates at Parkside Village</h3>
                 <p>A beautiful townhome community located across the street from Kennesaw Mountain National Battlefield Park and within easy walking distance of the square in historic downtown Marietta, Georgia.</p>
+                <hr> 
             </div>
+
+            <center>
+    <table border="5" bordercolor="#794B15" cellpadding="0" width="260" class="menu-table mobile-table">
+        <tr>
+            <td>
+                <center><a href="https://thegatesatparksidevillage.github.io/z/" target="_blank">Reflections of Gazebo 2010</a></center>
+            </td>
+        </tr>
+    </table>
+</center></b>
+                        </td>
+                    </tr>
+                </table>
+            </center>
         </main>
     </div>
 
     <img src="gates-top.png" class="decorative-bar" alt="border">
 </div>
 
+<div align="center" style="margin-top: 20px;">
+    <font color="#a6acaf" face="Great Vibes" size="4">
+        Site Modified: 
+        <script type="text/javascript">
+            document.write(document.lastModified);
+        </script>
+    </font>
+</div>
+
 </body>
 </html>
-
-</table>
-<tr>
-<TD>
-<div align="center" style="margin-top: 20px;">
-          <font color="#a6acaf" face="Great Vibes" size="4">
-            Site Modified: 
-            <script type="text/javascript">
-              document.write(document.lastModified);
-            </script>
-          </font>
-        </div>
-</TR>
-</TD>
