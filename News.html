@@ -1,18 +1,3 @@
-Here is the corrected and optimized code. I have preserved the exact fonts, colors, and layout structure for desktop users, but added "responsive" CSS rules so the layout adapts gracefully to cell phones.
-
-Key Changes Made:
-
-Media Query Added: I added a section in the CSS (@media screen and (max-width: 768px)) that tells the browser how to behave on smaller screens.
-
-Stacking Layout: On phones, the sidebar (menu) now sits on top of the content instead of squeezing next to it. This makes the text readable without zooming.
-
-Image Scaling: Added code to ensure the top banner and logo shrink automatically to fit phone screens (max-width: 100%).
-
-Code Cleanup: Replaced deprecated HTML tags (like <center>, <font>, and align) with modern CSS equivalents to ensure it works on newer browsers while keeping the same visual style.
-
-You can copy and paste this entire block to replace your current file.
-
-HTML
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -21,20 +6,16 @@ HTML
     <link rel="shortcut icon" href="heart.ico" />
     <title>The Gates at Parkside Village - News</title>
     <style type="text/css">
-        /* --- 1. Global Resets & Basics --- */
+        /* 1. Reset and Top Gap Fix */
+        * { box-sizing: border-box; }
         body { 
             background-color: #000000; 
             margin: 0; 
-            padding: 10px; 
+            padding: 0 10px 10px 10px; /* 0 top padding */
             font-family: "Times New Roman", Times, serif; 
         }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-        }
 
-        /* --- 2. Layout Containers --- */
+        /* 2. Main Wrapper */
         .site-wrapper { 
             max-width: 906px; 
             margin: 0 auto; 
@@ -44,180 +25,147 @@ HTML
 
         .decorative-bar { 
             width: 100%; 
-            height: auto; 
             display: block; 
+            height: auto;
         }
 
-        .main-container { 
-            background-color: #ffffff; 
-            display: flex; 
-            padding: 10px; 
-            gap: 20px; 
-            align-items: stretch; 
+        /* 3. The Structural Table (Desktop) */
+        .outer-layout-table {
+            width: 100%;
+            background-color: #ffffff;
+            border-collapse: collapse;
+            table-layout: fixed; /* Forces the browser to respect our widths */
         }
 
-        /* Sidebar Styling */
-        .sidebar { 
-            flex: 0 0 265px; 
-            background-image: url('gates-sidebar.png'); 
-            padding: 10px; 
-            background-repeat: repeat-y; 
+        .sidebar-cell {
+            width: 280px; /* Fixed width for the sidebar */
+            vertical-align: top;
+            background-image: url('gates-sidebar.png');
+            background-repeat: repeat-y;
             background-size: 100% auto;
-            text-align: center; /* Replaces <center> tag */
+            padding: 15px 0;
+            text-align: center;
         }
 
-        /* Content Styling */
-        .content-area { 
-            flex: 1; 
-            padding: 10px; 
-            color: #000000; 
-            text-align: center; 
+        .content-cell {
+            vertical-align: top;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
         }
 
-        /* --- 3. Menu Table Styling --- */
+        /* 4. Menu Table (Inside the sidebar) */
         .menu-table {
             background-color: #ffffff;
             text-align: left;
             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
             border-collapse: collapse;
-            width: 260px;
-            margin: 0 auto; /* Centers table within sidebar */
+            width: 220px; /* Made slightly narrower so it doesn't feel cramped */
+            margin: 0 auto;
         }
-        .menu-table td { height: 28px; padding: 0; }
+        .menu-table td { height: 28px; border: 5px solid #794B15; }
         .menu-table td a {
-            display: block; width: 100%; height: 100%;
-            padding-left: 15px; line-height: 28px;
-            color: #0000FF; text-decoration: none;
-            font-family: "Times New Roman", Times, serif; font-weight: bold;
-            box-sizing: border-box; /* Ensures padding doesn't break width */
+            display: block; width: 100%; padding-left: 10px; 
+            line-height: 28px; color: #0000FF; text-decoration: none;
+            font-weight: bold; font-size: 14px;
         }
 
-        /* --- 4. Content Elements --- */
+        /* 5. Content Elements */
         .news-link {
-            color: #0000FF;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin: 4px 0;
-            word-wrap: break-word; /* Prevents long PDF names from breaking mobile */
+            color: #0000FF; text-decoration: none; font-weight: bold;
+            display: inline-block; margin: 6px 0;
         }
         .news-link:hover { color: #FF0000 !important; }
 
         .red-line {
-            height: 3px;
-            background-color: #FF0000;
-            width: 80%;
-            margin: 20px auto;
-            border: none;
+            height: 3px; background-color: #FF0000;
+            width: 80%; margin: 25px auto; border: none;
         }
 
-        .footer-text {
-            margin-top: 20px;
-            text-align: center;
-            color: #a6acaf;
-            font-family: "Great Vibes", cursive; /* Assuming font is loaded or fallback used */
-            font-size: 18px; /* Slightly adjusted size for CSS */
-        }
-
-        /* --- 5. MOBILE RESPONSIVENESS --- */
+        /* 6. MOBILE OVERRIDE */
         @media screen and (max-width: 768px) {
-            .main-container {
-                flex-direction: column; /* Stacks sidebar on top of content */
-                gap: 0;
-                padding: 0;
+            body { padding: 0; }
+            .outer-layout-table, .outer-layout-table tbody, .outer-layout-table tr, .outer-layout-table td {
+                display: block; /* Turns the table into a stack for phones */
+                width: 100% !important;
             }
-
-            .sidebar {
-                flex: auto;
-                width: 100%;
-                background-repeat: repeat; /* Tiles background fully on mobile */
-                padding: 20px 0;
-                box-sizing: border-box;
+            .sidebar-cell {
+                background-repeat: repeat;
+                padding-bottom: 30px;
             }
-
-            .content-area {
-                padding: 20px 10px;
-            }
-
-            .menu-table {
-                width: 90%; /* Make menu wider on phones for easier tapping */
-                max-width: 300px;
-            }
-            
-            .site-wrapper {
-                width: 100%;
-                border-width: 2px; /* Thinner border on small screens */
-            }
+            .site-wrapper { width: 100%; border-width: 2px; }
+            .menu-table { width: 90%; max-width: 240px; }
         }
     </style>
 </head>
 <body>
 
 <div class="site-wrapper">
-    <img src="gates-top.png" class="decorative-bar" alt="Decorative Top Bar">
+    <img src="gates-top.png" class="decorative-bar" alt="top border">
 
-    <div class="main-container">
-        <aside class="sidebar">
-            <img src="gates-logo_oval.png" width="260" alt="Gates Logo">
-            <br><br>
-            <table border="5" bordercolor="#794B15" class="menu-table">
-                <tr><td><a href="index.html">Home</a></td></tr>
-                <tr><td><a href="Contact.html">Contact</a></td></tr>
-                <tr><td><a href="News.html">News</a></td></tr>
-                <tr><td><a href="Roster.html">Roster</a></td></tr>
-                <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
-                <tr><td><a href="Services.html">Services</a></td></tr>
-                <tr><td><a href="Directions.html">Directions</a></td></tr>
-            </table> 
-        </aside>
+    <table class="outer-layout-table">
+        <tr>
+            <td class="sidebar-cell">
+                <img src="gates-logo_oval.png" width="250" style="margin-bottom:15px;" alt="logo">
+                <table class="menu-table">
+                    <tr><td><a href="index.html">Home</a></td></tr>
+                    <tr><td><a href="Contact.html">Contact</a></td></tr>
+                    <tr><td><a href="News.html">News</a></td></tr>
+                    <tr><td><a href="Roster.html">Roster</a></td></tr>
+                    <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
+                    <tr><td><a href="Services.html">Services</a></td></tr>
+                    <tr><td><a href="Directions.html">Directions</a></td></tr>
+                </table>
+            </td>
 
-        <main class="content-area">
-            <div style="font-family: 'Monotype Corsiva', cursive; font-size: 24px; margin-bottom: 20px;">
-                <script>
-                    const now = new Date();
-                    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-                    const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-                    document.write(dayNames[now.getDay()] + ", " + monthNames[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear());
-                </script>
-            </div>
+            <td class="content-cell">
+                <div style="font-family: 'Monotype Corsiva', cursive; font-size: 24px; margin-bottom: 10px;">
+                    <script>
+                        const now = new Date();
+                        const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                        const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                        document.write(dayNames[now.getDay()] + ", " + monthNames[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear());
+                    </script>
+                </div>
 
-            <h2>News and Updates</h2>
+                <h2>News and Updates</h2>
 
-            <p><strong>Newsletters</strong></p>
-            <a href="2024 Summer & Fall Newsletters.pdf" target="_blank" class="news-link">2024 Summer & Fall Newsletters</a><br>
-            <a href="Newsletter-2023-Spring-Summer.pdf" target="_blank" class="news-link">2023 Newsletters</a><br>
-            <a href="Newsletter-2022-Third-FourthQtr.pdf" target="_blank" class="news-link">2022 Newsletters</a>
+                <p><strong>Newsletters</strong></p>
+                <a href="2024 Summer & Fall Newsletters.pdf" target="_blank" class="news-link">2024 Summer & Fall Newsletters</a><br>
+                <a href="Newsletter-2023-Spring-Summer.pdf" target="_blank" class="news-link">2023 Newsletters</a><br>
+                <a href="Newsletter-2022-Third-FourthQtr.pdf" target="_blank" class="news-link">2022 Newsletters</a>
 
-            <div class="red-line"></div>
+                <div class="red-line"></div>
 
-            <p><strong>Annual Homeowners Meeting Notes</strong></p>
-            <a href="Published Annual Meeting 2025.pdf" target="_blank" class="news-link">Gates Annual Homeowners Meeting 2025</a><br>
-            <a href="Gates Annual Homeowners Meeting 2024.pdf" target="_blank" class="news-link">Gates Annual Homeowners Meeting 2024</a>
-            
-            <div class="red-line"></div>
-            
-            <p><strong>News from January 2022</strong><br>
-            NEW Initiation fee is now $1500 – not $500 as referenced in the Covenants.</p>
-            
-            <div class="red-line"></div>
+                <p><strong>Annual Homeowners Meeting Notes</strong></p>
+                <a href="Published Annual Meeting 2025.pdf" target="_blank" class="news-link">Gates Annual Homeowners Meeting 2025</a><br>
+                <a href="Gates Annual Homeowners Meeting 2024.pdf" target="_blank" class="news-link">Gates Annual Homeowners Meeting 2024</a>
+                
+                <div class="red-line"></div>
+                
+                <p><strong>News from January 2022</strong><br>
+                NEW Initiation fee is now $1500 – not $500 as referenced in the Covenants.</p>
+                
+                <div class="red-line"></div>
 
-            <p><strong>Archive Past Minutes</strong></p>
-            <a href="GatesofParksideVillageMinutes 2025.pdf" target="_blank" class="news-link">2025 HOA Meeting Minutes</a><br>
-            <a href="GatesofParksideVillageMinutes 2024.pdf" target="_blank" class="news-link">2024 HOA Meeting Minutes</a><br>
-            <a href="GatesofParksideVillageMinutes2023.pdf" target="_blank" class="news-link">2023 HOA Meeting Minutes</a><br>
-            <a href="GatesofParksideVillageMinutes2022.pdf" target="_blank" class="news-link">2022 HOA Meeting Minutes</a><br>
-            <a href="GatesofParksideVillageMinutes2018.pdf" target="_blank" class="news-link">2018 HOA Meeting Minutes</a><br>
-            <a href="GatesofParksideVillageMinutes2017.pdf" target="_blank" class="news-link">2017 HOA Meeting Minutes</a><br>
-            <a href="GatesofParksideVillageMinutes2015.pdf" target="_blank" class="news-link">2015 HOA Meeting Minutes</a><br>
-            <a href="GatesofParksideVillageMinutes2013-14.pdf" target="_blank" class="news-link">2013-2014 HOA Meeting Minutes</a>
-            <br><br>
-        </main>
-    </div>
+                <p><strong>Archive Past Minutes</strong></p>
+                <a href="GatesofParksideVillageMinutes 2025.pdf" target="_blank" class="news-link">2025 HOA Meeting Minutes</a><br>
+                <a href="GatesofParksideVillageMinutes 2024.pdf" target="_blank" class="news-link">2024 HOA Meeting Minutes</a><br>
+                <a href="GatesofParksideVillageMinutes2023.pdf" target="_blank" class="news-link">2023 HOA Meeting Minutes</a><br>
+                <a href="GatesofParksideVillageMinutes2022.pdf" target="_blank" class="news-link">2022 HOA Meeting Minutes</a><br>
+                <a href="GatesofParksideVillageMinutes2018.pdf" target="_blank" class="news-link">2018 HOA Meeting Minutes</a><br>
+                <a href="GatesofParksideVillageMinutes2017.pdf" target="_blank" class="news-link">2017 HOA Meeting Minutes</a><br>
+                <a href="GatesofParksideVillageMinutes2015.pdf" target="_blank" class="news-link">2015 HOA Meeting Minutes</a><br>
+                <a href="GatesofParksideVillageMinutes2013-14.pdf" target="_blank" class="news-link">2013-2014 HOA Meeting Minutes</a>
+                <br><br>
+            </td>
+        </tr>
+    </table>
 
-    <img src="gates-top.png" class="decorative-bar" alt="Decorative Bottom Bar">
+    <img src="gates-top.png" class="decorative-bar" alt="bottom border">
 </div>
 
-<div class="footer-text">
+<div style="text-align: center; margin-top: 15px; color: #a6acaf; font-family: 'Great Vibes', cursive; font-size: 1.2em;">
     Site Modified: <script>document.write(document.lastModified);</script>
 </div>
 
