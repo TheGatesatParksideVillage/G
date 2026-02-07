@@ -54,21 +54,35 @@
             background-color: #ffffff;
         }
 
-        /* 4. Menu Table (Inside the sidebar) */
-        .menu-table {
-            background-color: #ffffff;
-            text-align: left;
-            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
-            border-collapse: collapse;
-            width: 220px; /* Made slightly narrower so it doesn't feel cramped */
-            margin: 0 auto;
-        }
-        .menu-table td { height: 28px; border: 5px solid #794B15; }
-        .menu-table td a {
-            display: block; width: 100%; padding-left: 10px; 
-            line-height: 28px; color: #0000FF; text-decoration: none;
-            font-weight: bold; font-size: 14px;
-        }
+        /* Updated Menu Table Styling */
+.menu-table {
+    background-color: #ffffff;
+    text-align: left;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+    border-collapse: collapse;
+    width: 220px; 
+    margin: 0 auto;
+    /* We move the border logic here for better control */
+    border: 5px solid #794B15; 
+}
+
+.menu-table td { 
+    height: 35px; /* Increased height slightly for better spacing */
+    border: 2px solid #794B15; /* Thinner internal lines looks cleaner */
+    vertical-align: middle;
+}
+
+.menu-table td a {
+    display: flex; /* Helps with vertical centering */
+    align-items: center; 
+    width: 100%; 
+    height: 100%;
+    padding-left: 10px; 
+    color: #0000FF; 
+    text-decoration: none;
+    font-weight: bold; 
+    font-size: 14px;
+}
 
         /* 5. Content Elements */
         .news-link {
