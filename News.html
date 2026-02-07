@@ -1,129 +1,124 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-<meta charset="UTF-8">
-<title>The Gates at Parkside Village</title>
-<link href="heart.ico" rel="SHORTCUT ICON" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="heart.ico" />
+    <title>The Gates at Parkside Village - News</title>
+    <style type="text/css">
+        /* 1. Sidebar Menu (Stays on the left) */
+        .menu-table {
+            background-color: #ffffff;
+            text-align: left;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+            border-collapse: collapse;
+            width: 260px;
+        }
+        .menu-table td { height: 28px; padding: 0; }
+        .menu-table td a {
+            display: block; width: 100%; height: 100%;
+            padding-left: 15px; line-height: 28px;
+            color: #0000FF; text-decoration: none;
+            font-family: "Times New Roman", Times, serif; font-weight: bold;
+        }
 
-<style type="text/css">
-    body { background-color: #000000; margin: 10px; }
-    a { text-decoration: none; }
-    a:hover { color: #FF0000; }
-    .nav-link { font-family: "Times New Roman", Times, serif; font-size: 18px; color: #000000; font-weight: bold; display: block; padding: 5px; }
-    .MainText { font-family: "Times New Roman", Times, serif; font-size: 18px; color: #000000; line-height: 1.5; }
-    .container-table { border: 5px solid #794B15; background-color: #794020; width: 900px; }
-    .content-area { background-color: #ffffff; border: 1px solid #cccccc; }
-</style>
+        /* 2. Main Layout */
+        body { background-color: #000000; margin: 0; padding: 10px; font-family: "Times New Roman", Times, serif; }
+        .site-wrapper { max-width: 906px; margin: 0 auto; border: 5px solid #794B15; background-color: #794020; }
+        .decorative-bar { width: 100%; height: 28px; display: block; }
+        .main-container { background-color: #ffffff; display: flex; padding: 10px; gap: 20px; align-items: stretch; }
+        .sidebar { flex: 0 0 265px; background-image: url('gates-sidebar.png'); padding: 10px; background-repeat: repeat-y; background-size: 100% auto; }
+        .content-area { flex: 1; padding: 10px; color: #000000; text-align: center; }
+
+        /* 3. News Styling */
+        .news-link {
+            color: #0000FF;
+            text-decoration: none; /* NO UNDERLINE */
+            font-weight: bold;
+            display: inline-block;
+            margin: 4px 0;
+        }
+        .news-link:hover { color: #FF0000 !important; }
+
+        /* The Bold Red Line */
+        .red-line {
+            height: 3px;
+            background-color: #FF0000;
+            width: 80%;
+            margin: 20px auto;
+            border: none;
+        }
+    </style>
 </head>
-
 <body>
 
-<div align="center">
-    <table class="container-table" cellspacing="0" cellpadding="0">
-        
-        <tr>
-            <td colspan="2" align="center">
-                <img src="gates-top.png" width="900" height="28" alt="Banner Top">
-            </td>
-        </tr>
+<div class="site-wrapper">
+    <img src="gates-top.png" class="decorative-bar">
 
-        <tr>
-            <td>
-                <table class="content-area" cellpadding="10" cellspacing="5" width="896">
-                    <tr>
-                        <td valign="top" width="265" background="gates-sidebar.png">
-                            <div align="center">
-                                <img src="gates-logo_oval.png" width="260" height="156" alt="Logo" />
-                            </div>
-                            <br />
-                            <table border="5" bordercolor="#794B15" cellpadding="0" width="260" bgcolor="#ffffff">
-                                <tr><td><a class="nav-link" href="index.html">Home</a></td></tr>
-                                <tr><td><a class="nav-link" href="Contact.html">Contact</a></td></tr>
-                                <tr><td><a class="nav-link" href="News.html">News</a></td></tr>
-                                <tr><td><a class="nav-link" href="Roster.html">Roster</a></td></tr>
-                                <tr><td><a class="nav-link" href="Documents.html">Forms and Documents</a></td></tr>
-                                <tr><td><a class="nav-link" href="Services.html">Services</a></td></tr>
-                                <tr><td><a class="nav-link" href="Directions.html">Directions</a></td></tr>
-                            </table>
-                        </td>
+    <div class="main-container">
+        <aside class="sidebar">
+            <center><img src="gates-logo_oval.png" width="260"></center><br>
+            <table border="5" bordercolor="#794B15" class="menu-table">
+                <tr><td><a href="index.html">Home</a></td></tr>
+                <tr><td><a href="Contact.html">Contact</a></td></tr>
+                <tr><td><a href="News.html">News</a></td></tr>
+                <tr><td><a href="Roster.html">Roster</a></td></tr>
+                <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
+                <tr><td><a href="Services.html">Services</a></td></tr>
+                <tr><td><a href="Directions.html">Directions</a></td></tr>
+            </table> 
+        </aside>
 
-                        <td valign="top" align="left">
-<font color="#000000" face="monotype corsiva" size="5">
-                                         <script language="JavaScript">
-                                             var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-                                             var monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-                                             var dt = new Date();
-                                             document.write(dayNames[dt.getDay()] + ", " + monthNames[dt.getMonth()] + " " + dt.getDate() + ", " + dt.getFullYear());
-                                         </script>
-                                    </font>
-<br />
+        <main class="content-area">
+            <div style="font-family: 'Monotype Corsiva', cursive; font-size: 24px;">
+                <script>
+                    const now = new Date();
+                    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                    const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                    document.write(dayNames[now.getDay()] + ", " + monthNames[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear());
+                </script>
+            </div>
 
-                            <div class="MainText">
-                                <h2 align="center">News and Updates</h2>
-                                
-                                <p><strong>Newsletters</strong></p>
-                                <p>
-                                    <a href="2024 Summer & Fall Newsletters.pdf" target="_blank">2024 Summer & Fall Newsletters</a><br />
-                                    <a href="Newsletter-2023-Spring-Summer.pdf" target="_blank">2023 Newsletters</a><br />
-                                    <a href="Newsletter-2022-Third-FourthQtr.pdf" target="_blank">2022 Newsletters</a>
-                                </p>
+            <h2>News and Updates</h2>
 
-                                <p><strong>Gates Annual Homeowners Meeting Notes</strong></p>
-                                <p align="center">
-                                    <a href="Published Annual Meeting 2025.pdf" target="_blank">Gates Annual Homeowners Meeting 2025</a><br />
-                                    <a href="Gates Annual Homeowners Meeting 2024.pdf" target="_blank">Gates Annual Homeowners Meeting 2024</a>
-                                </p>
-                                
-                                <p><strong>Board Meeting Notes</strong></p>
-                                <p align="center">
-                                    <a href="Gates @ Parkside Village HOA Mtg Notes 2026.pdf" target="_blank">2026 HOA Meeting Minutes</a>
-                                </p>
+            <p><strong>Newsletters</strong></p>
+            <a href="2024 Summer & Fall Newsletters.pdf" target="_blank" class="news-link">2024 Summer & Fall Newsletters</a><br>
+            <a href="Newsletter-2023-Spring-Summer.pdf" target="_blank" class="news-link">2023 Newsletters</a><br>
+            <a href="Newsletter-2022-Third-FourthQtr.pdf" target="_blank" class="news-link">2022 Newsletters</a>
 
-                                <hr width="75%" />
-                                
-                                <p align="center"><strong>News from January 2022</strong><br />
-                                NEW Initiation fee is now $1500 – not $500 as referenced in the Covenants.</p>
-                                
-                                <hr width="75%" />
+            <div class="red-line"></div>
 
-                                <p align="center"><strong>Archive Past Minutes</strong></p>
-                                <p align="center">
-                                    <a href="GatesofParksideVillageMinutes 2025.pdf" target="_blank">2025 HOA Meeting Minutes</a><br />
-                                    <a href="GatesofParksideVillageMinutes 2024.pdf" target="_blank">2024 HOA Meeting Minutes</a><br />
-                                    <a href="GatesofParksideVillageMinutes2023.pdf" target="_blank">2023 HOA Meeting Minutes</a><br />
-                                    <a href="GatesofParksideVillageMinutes2022.pdf" target="_blank">2022 HOA Meeting Minutes</a><br />
-                                    <a href="GatesofParksideVillageMinutes2018.pdf" target="_blank">2018 HOA Meeting Minutes</a><br />
-                                    <a href="GatesofParksideVillageMinutes2017.pdf" target="_blank">2017 HOA Meeting Minutes</a><br />
-                                    <a href="GatesofParksideVillageMinutes2015.pdf" target="_blank">2015 HOA Meeting Minutes</a><br />
-                                    <a href="GatesofParksideVillageMinutes2013-14.pdf" target="_blank">2013-2014 HOA Meeting Minutes</a>
-                                </p>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
+            <p><strong>Annual Homeowners Meeting Notes</strong></p>
+            <a href="Published Annual Meeting 2025.pdf" target="_blank" class="news-link">Gates Annual Homeowners Meeting 2025</a><br>
+            <a href="Gates Annual Homeowners Meeting 2024.pdf" target="_blank" class="news-link">Gates Annual Homeowners Meeting 2024</a>
+            
+            <div class="red-line"></div>
+            
+            <p><strong>News from January 2022</strong><br>
+            NEW Initiation fee is now $1500 – not $500 as referenced in the Covenants.</p>
+            
+            <div class="red-line"></div>
 
-        <tr>
-            <td align="center">
-                <img src="gates-top.png" width="900" height="28" alt="Banner Bottom">
-            </td>
-        </tr>
-    </table>
+            <p><strong>Archive Past Minutes</strong></p>
+            <a href="GatesofParksideVillageMinutes 2025.pdf" target="_blank" class="news-link">2025 HOA Meeting Minutes</a><br>
+            <a href="GatesofParksideVillageMinutes 2024.pdf" target="_blank" class="news-link">2024 HOA Meeting Minutes</a><br>
+            <a href="GatesofParksideVillageMinutes2023.pdf" target="_blank" class="news-link">2023 HOA Meeting Minutes</a><br>
+            <a href="GatesofParksideVillageMinutes2022.pdf" target="_blank" class="news-link">2022 HOA Meeting Minutes</a><br>
+            <a href="GatesofParksideVillageMinutes2018.pdf" target="_blank" class="news-link">2018 HOA Meeting Minutes</a><br>
+            <a href="GatesofParksideVillageMinutes2017.pdf" target="_blank" class="news-link">2017 HOA Meeting Minutes</a><br>
+            <a href="GatesofParksideVillageMinutes2015.pdf" target="_blank" class="news-link">2015 HOA Meeting Minutes</a><br>
+            <a href="GatesofParksideVillageMinutes2013-14.pdf" target="_blank" class="news-link">2013-2014 HOA Meeting Minutes</a>
+            <br><br>
+        </main>
+    </div>
+
+    <img src="gates-top.png" class="decorative-bar">
 </div>
 
-</body>
-</table>
-<tr>
-<TD>
 <div align="center" style="margin-top: 20px;">
-          <font color="#a6acaf" face="Great Vibes" size="4">
-            Site Modified: 
-            <script type="text/javascript">
-              document.write(document.lastModified);
-            </script>
-          </font>
-        </div>
-
+    <font color="#a6acaf" face="Great Vibes" size="4">
+        Site Modified: <script>document.write(document.lastModified);</script>
+    </font>
+</div>
+</body>
 </html>
-

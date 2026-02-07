@@ -1,118 +1,215 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <meta charset="utf-8">
-    <link href="heart.ico" rel="shortcut icon" />
-    <title>The Gates at Parkside Village</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="heart.ico" />
+    <title>The Gates at Parkside Village - Documents</title>
     <style type="text/css">
-        a { text-decoration: none; }
-  
-  /* This forces the color change even if a font tag is present */
-  a:hover, a:hover font {color: red !important;}
+        /* 1. The 3D Menu Box Styling (Matches Home & Contact) */
+        .menu-table {
+            background-color: #ffffff;
+            text-align: left;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+            border-collapse: collapse;
+            width: 260px;
+        }
 
-        body { background-color: #000000; margin: 10px; color: #000000; font-family: "Times New Roman", Times, serif; }
-        .menu-table td { background-color: #ffffff; padding: 5px; }
-        .content-area { background-color: #ffffff; padding: 20px; vertical-align: top; }
+        .menu-table td {
+            padding: 0; 
+            height: 35px;
+        }
+
+        /* Full-row clickable buttons */
+        .menu-table td a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding-left: 15px;
+            line-height: 35px;
+            color: #0000FF; /* Home Page Blue */
+            text-decoration: none;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .menu-table tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        /* Hover effect - Red */
+        a:hover, a:hover font { 
+            color: red !important; 
+        }
+
+        /* 2. General Page Structure */
+        body {
+            background-color: #000000;
+            margin: 0;
+            padding: 10px;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .site-wrapper {
+            max-width: 906px;
+            margin: 0 auto;
+            border: 5px solid #794B15;
+            background-color: #794020;
+        }
+
+        .decorative-bar {
+            width: 100%;
+            height: 28px;
+            display: block;
+        }
+
+        .main-container {
+            background-color: #ffffff;
+            display: flex;
+            padding: 10px;
+            gap: 20px;
+        }
+
+        .sidebar {
+            flex: 0 0 265px;
+            background-image: url('gates-sidebar.png');
+            padding: 10px;
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 10px;
+            color: #000000;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        /* Matches the Home Page Image Style */
+        .doc-feature-img {
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+            border: 5px solid #F2F3F4;
+            margin-bottom: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .date-display {
+            font-family: "Monotype Corsiva", cursive;
+            font-size: 1.5rem;
+            color: #000000;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* List Styling */
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+       /* 1. Clean up the document links */
+        ul li a {
+            color: #0000FF;      /* Home Page Blue */
+            text-decoration: none; /* REMOVES UNDERLINES */
+            font-weight: bold;
+        }
+
+        /* 2. Hover effect for the document links */
+        ul li a:hover {
+            color: red !important;
+            text-decoration: underline; /* Optional: only shows when mouse is over it */
+        }
+
+        /* Keep your existing list spacing */
+        ul li {
+            margin-bottom: 2px; 
+            line-height: 1.2;
+        }
+
+        /* This removes the big gap at the very top of the list */
+        ul {
+            margin-top: 5px; 
+            padding-left: 25px; 
+        }
+
+        /* 3. Responsive Stack for Phones */
+        @media (max-width: 800px) {
+            .main-container { flex-direction: column; }
+            .sidebar { flex: 1; min-width: 100%; }
+        }
     </style>
 </head>
-
 <body>
 
-<div align="center">
-    <table border="5" bordercolor="#794B15" bgcolor="#794020" cellspacing="1" cellpadding="0" width="900">
-        
-        <tr>
-            <td colspan="2" align="center">
-                <img src="gates-top.png" width="900" height="28" alt="top border">
-            </td>
-        </tr>
+<div class="site-wrapper">
+    <img src="gates-top.png" class="decorative-bar" alt="border">
 
-        <tr>
-            <td colspan="2">
-                <table bgcolor="#ffffff" border="1" cellpadding="10" cellspacing="5" width="100%">
-                    <tr>
-                        <td width="265" valign="top" background="gates-sidebar.png">
-                            <center>
-                                <img src="gates-logo_oval.png" width="260" height="156" alt="logo" />
-                            </center>
-                            <br>
-                            
-                            <table border="5" bordercolor="#794B15" cellpadding="0" width="260" class="menu-table">
-                                <tr><td><b><a href="index.html">Home</a></b></td></tr>
-                                <tr><td><b><a href="Contact.html">Contact</a></b></td></tr>
-                                <tr><td><b><a href="News.html">News</a></b></td></tr>
-                                <tr><td><b><a href="Roster.html">Roster</a></b></td></tr>
-                                <tr><td><b><a href="Documents.html">Forms and Documents</a></b></td></tr>
-                                <tr><td><b><a href="Services.html">Services</a></b></td></tr>
-                                <tr><td><b><a href="Directions.html">Directions</a></b></td></tr>
-                            </table>
-                        </td>
+    <div class="main-container">
+        <aside class="sidebar">
+            <center>
+                <img src="gates-logo_oval.png" width="260" alt="Logo">
+            </center>
+            <br>
+            <table border="5" bordercolor="#794B15" class="menu-table">
+                <tr><td><a href="index.html">Home</a></td></tr>
+                <tr><td><a href="Contact.html">Contact</a></td></tr>
+                <tr><td><a href="News.html">News</a></td></tr>
+                <tr><td><a href="Roster.html">Roster</a></td></tr>
+                <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
+                <tr><td><a href="Services.html">Services</a></td></tr>
+                <tr><td><a href="Directions.html">Directions</a></td></tr>
+            </table> 
+        </aside>
 
-                        <td valign="top" class="content-area">
-                            <center>
-<font color="#000000" face="monotype corsiva" size="5">
-                                         <script language="JavaScript">
-                                             var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-                                             var monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-                                             var dt = new Date();
-                                             document.write(dayNames[dt.getDay()] + ", " + monthNames[dt.getMonth()] + " " + dt.getDate() + ", " + dt.getFullYear());
-                                         </script>
-                                    </font>
-<br />
-                                <img src="thegatesatparksidevillage.png" alt="The Gates at Parkside Village" width="512" height="196" />
-                            </center>
-                            
-                            <h3>Community Rules and Regulations and General Information</h3>
-                            <ul>
-                                <li><a href="ACC_Form_2012.pdf" target="_blank">Architectural Control Form</a></li>
-                                <li><a href="Articles of Incorporation.pdf" target="_blank">Articles of Incorporation</a></li>
-                                <li><a href="Bylaws.htm" target="_blank">Bylaws</a></li>
-                                <li><a href="BOP Declaration Pages - Gates At Parkside.pdf" target="_blank">Property Insurance</a> (Password Protected)</li>
-                                <li><a href="Covenants.html" target="_blank">Covenants</a></li>
-                                <li><a href="Covenant-highlights-revSept2014.pdf" target="_blank">Covenant Highlights</a></li>
-                                <li><a href="Deck Stain 2025.pdf" target="_blank">Deck Stain</a></li>
-                                <li><a href="Grounds-Committee_Form_Revised-2014.pdf" target="_blank">Grounds Committee Form</a></li>
-                                <li><a href="leasing-application2014.pdf" target="_blank">Leasing Application | Permit</a></li>
-                                <li><a href="sb1_leasing_guidelines_rev.pdf" target="_blank">Leasing Guidelines</a></li>
-                                <li><a href="notice_of_violation.pdf" target="_blank">Notice of Violation | Fining Procedure</a></li>
-                                <li><a href="Parking_RegulationsRev_042012.pdf" target="_blank">Parking Regulations</a></li>
-                                <li><a href="RearAddressPlaques.pdf" target="_blank">Rear Address Plaque</a></li>
-                                <li><a href="reporting-a-problem-2014.pdf" target="_blank">Reporting a Problem</a></li>
-                                <li><a href="Resident-Roster-Form2014.pdf" target="_blank">Roster Information Form</a></li>
-                                <li><a href="csb1SatelliteDishRequirements.pdf" target="_blank">Satellite Dish Requirements</a></li>
-                                <li><a href="gates_siteplan.pdf" target="_blank">Site Plan</a></li>
-                                <li><a href="TrashRemoval2015.pdf" target="_blank">Trash Removal</a></li>
-                                <li><a href="https://gatesatparksidevillage.com/HOAdoc.html" target="_blank" style="color:#3336ff;">HOA Docs</a> (Password Protected)</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
+        <main class="content-area">
+            <div class="date-display">
+                <script>
+                    const now = new Date();
+                    document.write(now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
+                </script>
+            </div>
 
-        <tr>
-            <td colspan="2" align="center">
-                <img src="gates-top.png" width="900" height="28" alt="bottom border">
-            </td>
-        </tr>
-    </table>
+            <center>
+                <img src="thegatesatparksidevillage.png" class="doc-feature-img" alt="The Gates at Parkside Village" width="512" />
+            </center>
+            
+<div style="height: 3px; background-color: #FF0000; width: 80%; margin: 20px auto; border: none;"></div>
+            <h3 style="text-decoration: underline;">Community Rules, Regulations and General Information</h3>
+            
+            <ul>
+                <li><a href="ACC_Form_2012.pdf" target="_blank">Architectural Control Form</a></li>
+                <li><a href="Articles of Incorporation.pdf" target="_blank">Articles of Incorporation</a></li>
+                <li><a href="Bylaws.htm" target="_blank">Bylaws</a></li>
+                <li><a href="BOP Declaration Pages - Gates At Parkside.pdf" target="_blank">Property Insurance</a> (Password Protected)</li>
+                <li><a href="Covenants.html" target="_blank">Covenants</a></li>
+                <li><a href="Covenant-highlights-revSept2014.pdf" target="_blank">Covenant Highlights</a></li>
+                <li><a href="Deck Stain 2025.pdf" target="_blank">Deck Stain</a></li>
+                <li><a href="Grounds-Committee_Form_Revised-2014.pdf" target="_blank">Grounds Committee Form</a></li>
+                <li><a href="leasing-application2014.pdf" target="_blank">Leasing Application | Permit</a></li>
+                <li><a href="sb1_leasing_guidelines_rev.pdf" target="_blank">Leasing Guidelines</a></li>
+                <li><a href="notice_of_violation.pdf" target="_blank">Notice of Violation | Fining Procedure</a></li>
+                <li><a href="Parking_RegulationsRev_042012.pdf" target="_blank">Parking Regulations</a></li>
+                <li><a href="RearAddressPlaques.pdf" target="_blank">Rear Address Plaque</a></li>
+                <li><a href="reporting-a-problem-2014.pdf" target="_blank">Reporting a Problem</a></li>
+                <li><a href="Resident-Roster-Form2014.pdf" target="_blank">Roster Information Form</a></li>
+                <li><a href="csb1SatelliteDishRequirements.pdf" target="_blank">Satellite Dish Requirements</a></li>
+                <li><a href="gates_siteplan.pdf" target="_blank">Site Plan</a></li>
+                <li><a href="TrashRemoval2015.pdf" target="_blank">Trash Removal</a></li>
+                <li><a href="https://gatesatparksidevillage.com/HOAdoc.html" target="_blank">HOA Docs</a> (Password Protected)</li>
+            </ul>
+        </main>
+    </div>
+
+    <img src="gates-top.png" class="decorative-bar" alt="border">
+</div>
+
+<div align="center" style="margin-top: 20px;">
+    <font color="#a6acaf" face="Great Vibes" size="4">
+        Site Modified: 
+        <script>document.write(document.lastModified);</script>
+    </font>
 </div>
 
 </body>
 </html>
-
-</table>
-<tr>
-<TD>
-<div align="center" style="margin-top: 20px;">
-          <font color="#a6acaf" face="Great Vibes" size="4">
-            Site Modified: 
-            <script type="text/javascript">
-              document.write(document.lastModified);
-            </script>
-          </font>
-        </div>
-</TR>
-</TD>
-
-

@@ -7,21 +7,56 @@
     <title>The Gates at Parkside Village</title>
     <style type="text/css">
 
-/* This makes the gazebo table flexible on small screens */
-@media (max-width: 600px) {
-    .mobile-table {
-        width: 100% !important;
-        max-width: 260px; /* Keeps it from getting too huge on tablets */
-    }
-}
-        a { text-decoration: none; }
-        
-        /* This forces the color change even if a font tag is present */
+/* 1. Table & Shadow Effect */
+        .menu-table {
+            background-color: #ffffff;
+            text-align: left;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+            border-collapse: collapse;
+            width: 260px;
+        }
+
+        /* 2. Cell Spacing */
+        .menu-table td {
+            padding: 0; 
+            height: 35px;
+        }
+
+        /* 3. Make Links Fill the Row */
+        .menu-table td a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding-left: 25px; /* Keeps text from touching the left edge */
+            line-height: 35px;  /* Centers text vertically */
+            color: #0000FF;
+            text-decoration: none;
+        }
+
+        /* 4. Hover Effects */
+        .menu-table tr:hover {
+            background-color: #f2f2f2;
+        }
+
         a:hover, a:hover font { 
             color: red !important; 
         }
 
-        /* General Reset */
+        /* 5. Responsive Design */
+        @media (max-width: 600px) {
+            .mobile-table {
+                width: 100% !important;
+                max-width: 260px;
+            }
+            .main-container {
+                flex-direction: column;
+            }
+            .content {
+                text-align: left;
+            }
+        }
+
+        /* 6. General Page Styling */
         body {
             background-color: #000000;
             margin: 0;
@@ -29,7 +64,6 @@
             font-family: "Times New Roman", Times, serif;
         }
 
-        /* Container for the whole site */
         .site-wrapper {
             max-width: 900px;
             margin: 0 auto;
@@ -37,38 +71,33 @@
             background-color: #794020;
         }
 
-        /* Top and Bottom Decorative Bars */
         .decorative-bar {
             width: 100%;
             height: 28px;
             display: block;
         }
 
-        /* Main Body Area */
         .main-container {
             background-color: #ffffff;
             display: flex;
-            flex-wrap: wrap; /* This makes it responsive! */
+            flex-wrap: wrap;
             padding: 10px;
             gap: 20px;
         }
 
-        /* Sidebar Styling */
         .sidebar {
-            flex: 1 1 180px; /* Grow, shrink, base width */
+            flex: 1 1 180px;
             background-image: url('gates-sidebar.png');
             padding: 10px;
             min-width: 260px;
         }
 
-        /* Content Styling */
         .content {
             flex: 2 1 400px;
             padding: 10px;
             text-align: center;
         }
 
-        /* Feature Image Box */
         .feature-box {
             border: 5px solid #F2F3F4;
             background-image: url('thegatesatparksidevillage WC.png');
@@ -77,6 +106,17 @@
             height: 200px;
             margin: 20px 0;
             width: 100%;
+            /* The 3D shadow */
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        /* This ensures your red line stays visible and styled */
+        hr { 
+            border: 0; 
+            border-top: 2px solid red !important; /* Added !important to protect it */
+            width: 80%; 
+            margin: 20px auto; 
+            display: block;
         }
 
         .welcome-text {
@@ -85,23 +125,7 @@
             line-height: 1.6;
         }
 
-        /* Moved the HR styling here where it belongs */
-        hr { 
-            border: 0; 
-            border-top: 2px solid red; 
-            width: 80%; 
-            margin: 20px auto; 
-        }
-
-        /* Media Query for Phones */
-        @media (max-width: 600px) {
-            .main-container {
-                flex-direction: column; /* Stacks sidebar on top of content */
-            }
-            .content {
-                text-align: left;
-            }
-        }
+        
 
     </style>
 </head>
@@ -116,7 +140,7 @@
                 <img src="gates-logo_oval.png" width="260" alt="Logo">
             </center>
             <br>
-            <table border="5" bordercolor="#794B15" cellpadding="0" width="260" class="menu-table">
+            <table border="5" bordercolor="#794B15" cellpadding="5" width="260" class="menu-table">
                 <tr><td><b><a href="index.html">Home</a></b></td></tr>
                 <tr><td><b><a href="Contact.html">Contact</a></b></td></tr>
                 <tr><td><b><a href="News.html">News</a></b></td></tr>
@@ -166,7 +190,7 @@
 </div>
 
 <div align="center" style="margin-top: 20px;">
-    <font color="#a6acaf" face="Great Vibes" size="4">
+    <font color="#FDF5E6" face="Great Vibes" size="4">
         Site Modified: 
         <script type="text/javascript">
             document.write(document.lastModified);
