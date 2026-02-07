@@ -1,3 +1,18 @@
+Here is the corrected and optimized code. I have preserved the exact fonts, colors, and layout structure for desktop users, but added "responsive" CSS rules so the layout adapts gracefully to cell phones.
+
+Key Changes Made:
+
+Media Query Added: I added a section in the CSS (@media screen and (max-width: 768px)) that tells the browser how to behave on smaller screens.
+
+Stacking Layout: On phones, the sidebar (menu) now sits on top of the content instead of squeezing next to it. This makes the text readable without zooming.
+
+Image Scaling: Added code to ensure the top banner and logo shrink automatically to fit phone screens (max-width: 100%).
+
+Code Cleanup: Replaced deprecated HTML tags (like <center>, <font>, and align) with modern CSS equivalents to ensure it works on newer browsers while keeping the same visual style.
+
+You can copy and paste this entire block to replace your current file.
+
+HTML
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -6,13 +21,67 @@
     <link rel="shortcut icon" href="heart.ico" />
     <title>The Gates at Parkside Village - News</title>
     <style type="text/css">
-        /* 1. Sidebar Menu (Stays on the left) */
+        /* --- 1. Global Resets & Basics --- */
+        body { 
+            background-color: #000000; 
+            margin: 0; 
+            padding: 10px; 
+            font-family: "Times New Roman", Times, serif; 
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* --- 2. Layout Containers --- */
+        .site-wrapper { 
+            max-width: 906px; 
+            margin: 0 auto; 
+            border: 5px solid #794B15; 
+            background-color: #794020; 
+        }
+
+        .decorative-bar { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+        }
+
+        .main-container { 
+            background-color: #ffffff; 
+            display: flex; 
+            padding: 10px; 
+            gap: 20px; 
+            align-items: stretch; 
+        }
+
+        /* Sidebar Styling */
+        .sidebar { 
+            flex: 0 0 265px; 
+            background-image: url('gates-sidebar.png'); 
+            padding: 10px; 
+            background-repeat: repeat-y; 
+            background-size: 100% auto;
+            text-align: center; /* Replaces <center> tag */
+        }
+
+        /* Content Styling */
+        .content-area { 
+            flex: 1; 
+            padding: 10px; 
+            color: #000000; 
+            text-align: center; 
+        }
+
+        /* --- 3. Menu Table Styling --- */
         .menu-table {
             background-color: #ffffff;
             text-align: left;
             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
             border-collapse: collapse;
             width: 260px;
+            margin: 0 auto; /* Centers table within sidebar */
         }
         .menu-table td { height: 28px; padding: 0; }
         .menu-table td a {
@@ -20,27 +89,20 @@
             padding-left: 15px; line-height: 28px;
             color: #0000FF; text-decoration: none;
             font-family: "Times New Roman", Times, serif; font-weight: bold;
+            box-sizing: border-box; /* Ensures padding doesn't break width */
         }
 
-        /* 2. Main Layout */
-        body { background-color: #000000; margin: 0; padding: 10px; font-family: "Times New Roman", Times, serif; }
-        .site-wrapper { max-width: 906px; margin: 0 auto; border: 5px solid #794B15; background-color: #794020; }
-        .decorative-bar { width: 100%; height: 28px; display: block; }
-        .main-container { background-color: #ffffff; display: flex; padding: 10px; gap: 20px; align-items: stretch; }
-        .sidebar { flex: 0 0 265px; background-image: url('gates-sidebar.png'); padding: 10px; background-repeat: repeat-y; background-size: 100% auto; }
-        .content-area { flex: 1; padding: 10px; color: #000000; text-align: center; }
-
-        /* 3. News Styling */
+        /* --- 4. Content Elements --- */
         .news-link {
             color: #0000FF;
-            text-decoration: none; /* NO UNDERLINE */
+            text-decoration: none;
             font-weight: bold;
             display: inline-block;
             margin: 4px 0;
+            word-wrap: break-word; /* Prevents long PDF names from breaking mobile */
         }
         .news-link:hover { color: #FF0000 !important; }
 
-        /* The Bold Red Line */
         .red-line {
             height: 3px;
             background-color: #FF0000;
@@ -48,16 +110,56 @@
             margin: 20px auto;
             border: none;
         }
+
+        .footer-text {
+            margin-top: 20px;
+            text-align: center;
+            color: #a6acaf;
+            font-family: "Great Vibes", cursive; /* Assuming font is loaded or fallback used */
+            font-size: 18px; /* Slightly adjusted size for CSS */
+        }
+
+        /* --- 5. MOBILE RESPONSIVENESS --- */
+        @media screen and (max-width: 768px) {
+            .main-container {
+                flex-direction: column; /* Stacks sidebar on top of content */
+                gap: 0;
+                padding: 0;
+            }
+
+            .sidebar {
+                flex: auto;
+                width: 100%;
+                background-repeat: repeat; /* Tiles background fully on mobile */
+                padding: 20px 0;
+                box-sizing: border-box;
+            }
+
+            .content-area {
+                padding: 20px 10px;
+            }
+
+            .menu-table {
+                width: 90%; /* Make menu wider on phones for easier tapping */
+                max-width: 300px;
+            }
+            
+            .site-wrapper {
+                width: 100%;
+                border-width: 2px; /* Thinner border on small screens */
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="site-wrapper">
-    <img src="gates-top.png" class="decorative-bar">
+    <img src="gates-top.png" class="decorative-bar" alt="Decorative Top Bar">
 
     <div class="main-container">
         <aside class="sidebar">
-            <center><img src="gates-logo_oval.png" width="260"></center><br>
+            <img src="gates-logo_oval.png" width="260" alt="Gates Logo">
+            <br><br>
             <table border="5" bordercolor="#794B15" class="menu-table">
                 <tr><td><a href="index.html">Home</a></td></tr>
                 <tr><td><a href="Contact.html">Contact</a></td></tr>
@@ -70,7 +172,7 @@
         </aside>
 
         <main class="content-area">
-            <div style="font-family: 'Monotype Corsiva', cursive; font-size: 24px;">
+            <div style="font-family: 'Monotype Corsiva', cursive; font-size: 24px; margin-bottom: 20px;">
                 <script>
                     const now = new Date();
                     const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -112,13 +214,12 @@
         </main>
     </div>
 
-    <img src="gates-top.png" class="decorative-bar">
+    <img src="gates-top.png" class="decorative-bar" alt="Decorative Bottom Bar">
 </div>
 
-<div align="center" style="margin-top: 20px;">
-    <font color="#a6acaf" face="Great Vibes" size="4">
-        Site Modified: <script>document.write(document.lastModified);</script>
-    </font>
+<div class="footer-text">
+    Site Modified: <script>document.write(document.lastModified);</script>
 </div>
+
 </body>
 </html>
