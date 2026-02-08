@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿I have fixed the Contact page.
+
+The background issue was likely caused by the flex-wrap: wrap and justify-content: center properties in the .main-container, which can cause elements to shift and reveal the background behind them on certain screen sizes. I have standardized it to match the other fixed pages: using a clean flex layout for desktop and an align-items: center stack for mobile.
+
+I also tightened the menu row height to match the "compact" look of your other pages.
+
+Contact Page (Fixed Background & Mobile Alignment)
+HTML
+<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +14,7 @@
     <link rel="shortcut icon" href="heart.ico" />
     <title>The Gates at Parkside Village - Contact</title>
     <style type="text/css">
-        /* 1. The 3D Menu Box Styling (Matches Home Page) */
+        /* 1. Tight 3D Menu Styling */
         .menu-table {
             background-color: #ffffff;
             text-align: left;
@@ -17,15 +25,13 @@
 
         .menu-table td {
             padding: 0; 
-            height: 35px;
         }
 
         .menu-table td a {
             display: block;
             width: 100%;
-            height: 100%;
-            padding-left: 15px;
-            line-height: 35px;
+            /* Tightened vertical padding to match other pages */
+            padding: 4px 0 4px 15px; 
             color: #0000FF; 
             text-decoration: none;
             font-family: "Times New Roman", Times, serif;
@@ -37,7 +43,6 @@
             background-color: #f2f2f2;
         }
 
-        /* Hover effect forces Red */
         a:hover, a:hover font { 
             color: red !important; 
         }
@@ -66,16 +71,17 @@
         .main-container {
             background-color: #ffffff;
             display: flex;
-            flex-wrap: wrap;
             padding: 10px;
             gap: 20px;
-            justify-content: center;
+            align-items: stretch; /* Prevents background gaps */
         }
 
         .sidebar {
             flex: 0 0 265px;
             background-image: url('gates-sidebar.png');
             padding: 10px;
+            background-repeat: repeat-y;
+            background-size: 100% auto;
         }
 
         .content-area {
@@ -83,6 +89,7 @@
             padding: 10px;
             color: #000000;
             line-height: 1.6;
+            min-width: 0; /* Prevents flex blowout */
         }
 
         .date-display {
@@ -98,7 +105,7 @@
             font-size: 18px;
         }
 
-        /* 3. Responsive Stack & Mobile Centering */
+        /* 3. Mobile Friendly - Centering and Background Fix */
         @media (max-width: 800px) {
             .main-container { 
                 flex-direction: column; 
@@ -108,13 +115,17 @@
                 flex: 1; 
                 width: 100%; 
                 min-width: 100%; 
+                padding-bottom: 20px;
             }
             .menu-table {
-                margin: 0 auto !important; /* Forces centering of the menu */
+                margin: 0 auto !important;
                 display: table;
             }
+            .content-area {
+                width: 100%;
+            }
             .date-display, .contact-info {
-                text-align: center; /* Better readability on small screens */
+                text-align: center;
             }
         }
     </style>
@@ -128,17 +139,17 @@
         <aside class="sidebar">
             <center>
                 <img src="gates-logo_oval.png" width="260" alt="Logo">
+                <br><br>
+                <table border="5" bordercolor="#794B15" class="menu-table">
+                    <tr><td><a href="index.html">Home</a></td></tr>
+                    <tr><td><a href="Contact.html">Contact</a></td></tr>
+                    <tr><td><a href="News.html">News</a></td></tr>
+                    <tr><td><a href="Roster.html">Roster</a></td></tr>
+                    <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
+                    <tr><td><a href="Services.html">Services</a></td></tr>
+                    <tr><td><a href="Directions.html">Directions</a></td></tr>
+                </table> 
             </center>
-            <br>
-            <table border="5" bordercolor="#794B15" class="menu-table">
-                <tr><td><a href="index.html">Home</a></td></tr>
-                <tr><td><a href="Contact.html">Contact</a></td></tr>
-                <tr><td><a href="News.html">News</a></td></tr>
-                <tr><td><a href="Roster.html">Roster</a></td></tr>
-                <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
-                <tr><td><a href="Services.html">Services</a></td></tr>
-                <tr><td><a href="Directions.html">Directions</a></td></tr>
-            </table> 
         </aside>
 
         <main class="content-area">
