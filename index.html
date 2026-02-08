@@ -22,7 +22,7 @@
             height: 35px;
         }
 
-        /* 3. Make Links Fill the Row */
+        /* 3. Sidebar Links - Bold */
         .menu-table td a {
             display: block;
             width: 100%;
@@ -31,6 +31,7 @@
             line-height: 35px;  
             color: #0000FF; 
             text-decoration: none;
+            font-weight: bold; 
         }
 
         /* 4. Hover Effects for ALL links */
@@ -114,7 +115,7 @@
             background-size: cover;
             background-position: center;
             height: 200px;
-            margin: 20px 0;
+            margin: 20px 0;        
             width: 100%;
             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
         }
@@ -133,10 +134,20 @@
             line-height: 1.6;
         }
 
-        /* Set specific links to Blue, Non-Bold */
-        .welcome-text a, .mobile-table a {
+        .welcome-text h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .welcome-text a {
             color: #0000FF;
             font-weight: normal;
+        }
+
+        .mobile-table a {
+            color: #0000FF;
+            font-weight: bold;
+            padding-left: 0 !important;
         }
     </style>
 </head>
@@ -147,9 +158,9 @@
 
     <div class="main-container">
         <aside class="sidebar">
-            <center>
+            <div style="text-align: center;">
                 <img src="gates-logo_oval.png" width="260" alt="Logo">
-            </center>
+            </div>
             <br>
             <table border="5" bordercolor="#794B15" width="260" class="menu-table">
                 <tr><td><a href="index.html">Home</a></td></tr>
@@ -173,10 +184,12 @@
                 </span>
             </div>
 
+            <h4 style="color: #EB3E1C; margin: 10px 0;">Site is Cell Phone Friendly</h4>
+
             <div class="feature-box"></div>
 
             <div class="welcome-text">
-                <h3>Welcome to The Gates at Parkside Village</h3>
+                <h2>Welcome to The Gates at Parkside Village</h2>
                 <p>A beautiful townhome community located across the street from <a href="https://www.nps.gov/kemo/index.htm" target="_blank">Kennesaw Mountain National Battlefield Park</a> and within easy walking distance of the square in historic downtown <a href="https://exploregeorgia.org/article/guide-to-marietta" target="_blank">Marietta</a>, Georgia.</p>
                 <hr> 
             </div>
@@ -185,7 +198,7 @@
                 <table border="5" bordercolor="#794B15" width="260" class="menu-table mobile-table">
                     <tr>
                         <td style="text-align: center;">
-                            <a href="https://thegatesatparksidevillage.github.io/z/" target="_blank" style="padding-left: 0;">Reflections of Gazebo 2010</a>
+                            <a href="https://thegatesatparksidevillage.github.io/z/" target="_blank">Reflections of Gazebo 2010</a>
                         </td>
                     </tr>
                 </table>
@@ -196,13 +209,13 @@
     <img src="gates-top.png" class="decorative-bar" alt="border">
 </div>
 
-<div align="center" style="margin-top: 20px;">
-    <font color="#FDF5E6" face="Great Vibes" size="4">
+<div style="text-align: center; margin-top: 20px;">
+    <span style="color: #FDF5E6; font-family: 'Great Vibes', cursive; font-size: 1.25rem;">
         Site Modified: 
         <script type="text/javascript">
             document.write(document.lastModified);
         </script>
-    </font>
+    </span>
 </div>
 
 </body>
