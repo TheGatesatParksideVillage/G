@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="heart.ico" />
     <title>The Gates at Parkside Village - Directions</title>
     <style type="text/css">
-        /* 1. 3D Menu Styling */
+        /* 1. Tight 3D Menu Styling */
         .menu-table {
             background-color: #ffffff;
             text-align: left;
@@ -17,20 +17,17 @@
 
         .menu-table td {
             padding: 0; 
-            height: 28px; 
         }
 
         .menu-table td a {
             display: block;
             width: 100%;
-            height: 100%;
-            padding-left: 15px;
-            line-height: 28px;
+            padding: 4px 0 4px 15px; /* Tight vertical spacing */
             color: #0000FF;
             text-decoration: none;
             font-family: "Times New Roman", Times, serif;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .menu-table tr:hover { background-color: #f2f2f2; }
@@ -115,10 +112,21 @@
             margin-bottom: 10px;
         }
 
-        /* 4. Mobile Friendly */
+        /* 4. Mobile Friendly - Centering the Menu Box */
         @media (max-width: 800px) {
-            .main-container { flex-direction: column; }
-            .sidebar { flex: 1; min-width: 100%; }
+            .main-container { flex-direction: column; align-items: center; }
+            .sidebar { 
+                flex: 1; 
+                width: 100%; 
+                min-width: 100%; 
+                padding-bottom: 20px;
+            }
+            /* This centers the menu specifically on mobile devices */
+            .menu-table {
+                margin: 0 auto !important;
+                display: table;
+            }
+            .content-area { width: 100%; }
         }
     </style>
 </head>
@@ -131,17 +139,17 @@
         <aside class="sidebar">
             <center>
                 <img src="gates-logo_oval.png" width="260" alt="Logo">
+                <br><br>
+                <table border="5" bordercolor="#794B15" class="menu-table">
+                    <tr><td><a href="index.html">Home</a></td></tr>
+                    <tr><td><a href="Contact.html">Contact</a></td></tr>
+                    <tr><td><a href="News.html">News</a></td></tr>
+                    <tr><td><a href="Roster.html">Roster</a></td></tr>
+                    <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
+                    <tr><td><a href="Services.html">Services</a></td></tr>
+                    <tr><td><a href="Directions.html">Directions</a></td></tr>
+                </table> 
             </center>
-            <br>
-            <table border="5" bordercolor="#794B15" class="menu-table">
-                <tr><td><a href="index.html">Home</a></td></tr>
-                <tr><td><a href="Contact.html">Contact</a></td></tr>
-                <tr><td><a href="News.html">News</a></td></tr>
-                <tr><td><a href="Roster.html">Roster</a></td></tr>
-                <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
-                <tr><td><a href="Services.html">Services</a></td></tr>
-                <tr><td><a href="Directions.html">Directions</a></td></tr>
-            </table> 
         </aside>
 
         <main class="content-area">
@@ -154,7 +162,7 @@
                 </script>
             </div>
 
-            <h2>Directions</h2>
+            <h2 style="font-family: 'Times New Roman', serif;">Directions</h2>
             
             <img src="find-us.png" class="map-img" width="400" height="400" alt="Map to The Gates">
 
@@ -165,7 +173,7 @@
             </p>
             
             <p>
-                Find us on <a href="https://www.google.com/maps/place/Gates+At+Parkside+Village/@33.979475,-84.5727494,16.02z/data=!4m5!3m4!1s0x0:0x840c66a604d1e895!8m2!3d33.9816473!4d-84.5695496!5m1!1e4?hl=en-US" target="_blank" class="map-link">Google Maps</a>
+                Find us on <a href="https://www.google.com/maps/place/1188+Kennesaw+Ave+NW,+Marietta,+GA+30060" target="_blank" class="map-link">Google Maps</a>
             </p>
             <br>
         </main>
