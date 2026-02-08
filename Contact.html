@@ -1,12 +1,4 @@
-﻿I have fixed the Contact page.
-
-The background issue was likely caused by the flex-wrap: wrap and justify-content: center properties in the .main-container, which can cause elements to shift and reveal the background behind them on certain screen sizes. I have standardized it to match the other fixed pages: using a clean flex layout for desktop and an align-items: center stack for mobile.
-
-I also tightened the menu row height to match the "compact" look of your other pages.
-
-Contact Page (Fixed Background & Mobile Alignment)
-HTML
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +22,6 @@ HTML
         .menu-table td a {
             display: block;
             width: 100%;
-            /* Tightened vertical padding to match other pages */
             padding: 4px 0 4px 15px; 
             color: #0000FF; 
             text-decoration: none;
@@ -43,7 +34,7 @@ HTML
             background-color: #f2f2f2;
         }
 
-        a:hover, a:hover font { 
+        a:hover { 
             color: red !important; 
         }
 
@@ -73,7 +64,7 @@ HTML
             display: flex;
             padding: 10px;
             gap: 20px;
-            align-items: stretch; /* Prevents background gaps */
+            align-items: stretch; 
         }
 
         .sidebar {
@@ -89,7 +80,7 @@ HTML
             padding: 10px;
             color: #000000;
             line-height: 1.6;
-            min-width: 0; /* Prevents flex blowout */
+            min-width: 0;
         }
 
         .date-display {
@@ -105,17 +96,19 @@ HTML
             font-size: 18px;
         }
 
-        /* 3. Mobile Friendly - Centering and Background Fix */
+        /* 3. Mobile Friendly - Fixed Top Alignment */
         @media (max-width: 800px) {
             .main-container { 
                 flex-direction: column; 
-                align-items: center; 
+                align-items: flex-start; /* Keeps content at the top */
+                padding: 10px;
             }
             .sidebar { 
-                flex: 1; 
+                flex: none; 
                 width: 100%; 
                 min-width: 100%; 
-                padding-bottom: 20px;
+                padding: 10px 0 20px 0;
+                background-size: cover;
             }
             .menu-table {
                 margin: 0 auto !important;
@@ -123,9 +116,15 @@ HTML
             }
             .content-area {
                 width: 100%;
+                padding: 10px 0;
             }
             .date-display, .contact-info {
                 text-align: center;
+            }
+            /* Centers images in contact info on mobile */
+            .contact-info img {
+                display: block;
+                margin: 0 auto 10px auto;
             }
         }
     </style>
