@@ -29,17 +29,23 @@
             height: 100%;
             padding-left: 25px; 
             line-height: 35px;  
-            color: #0000FF;
+            color: #0000FF; 
             text-decoration: none;
         }
 
-        /* 4. Hover Effects */
-        .menu-table tr:hover {
-            background-color: #f2f2f2;
+        /* 4. Hover Effects for ALL links */
+        a {
+            text-decoration: none;
+            transition: color 0.2s;
         }
 
-        a:hover, a:hover font { 
+        a:hover { 
             color: red !important; 
+            text-decoration: none;
+        }
+
+        .menu-table tr:hover {
+            background-color: #f2f2f2;
         }
 
         /* 5. Responsive Design */
@@ -47,12 +53,12 @@
             .mobile-table {
                 width: 100% !important;
                 max-width: 260px;
-                margin: 20px auto !important; /* Forces centering on mobile */
-                display: table; /* Ensures margin: auto works */
+                margin: 20px auto !important; 
+                display: table; 
             }
             .main-container {
                 flex-direction: column;
-                align-items: center; /* Centers items for mobile */
+                align-items: center; 
             }
             .content {
                 text-align: center;
@@ -86,7 +92,7 @@
             flex-wrap: wrap;
             padding: 10px;
             gap: 20px;
-            justify-content: center; /* Better alignment for wrapped items */
+            justify-content: center; 
         }
 
         .sidebar {
@@ -126,6 +132,12 @@
             color: #000;
             line-height: 1.6;
         }
+
+        /* Set specific links to Blue, Non-Bold */
+        .welcome-text a, .mobile-table a {
+            color: #0000FF;
+            font-weight: normal;
+        }
     </style>
 </head>
 <body>
@@ -140,13 +152,13 @@
             </center>
             <br>
             <table border="5" bordercolor="#794B15" width="260" class="menu-table">
-                <tr><td><b><a href="index.html">Home</a></b></td></tr>
-                <tr><td><b><a href="Contact.html">Contact</a></b></td></tr>
-                <tr><td><b><a href="News.html">News</a></b></td></tr>
-                <tr><td><b><a href="Roster.html">Roster</a></b></td></tr>
-                <tr><td><b><a href="Documents.html">Forms and Documents</a></b></td></tr>
-                <tr><td><b><a href="Services.html">Services</a></b></td></tr>
-                <tr><td><b><a href="Directions.html">Directions</a></b></td></tr>
+                <tr><td><a href="index.html">Home</a></td></tr>
+                <tr><td><a href="Contact.html">Contact</a></td></tr>
+                <tr><td><a href="News.html">News</a></td></tr>
+                <tr><td><a href="Roster.html">Roster</a></td></tr>
+                <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
+                <tr><td><a href="Services.html">Services</a></td></tr>
+                <tr><td><a href="Directions.html">Directions</a></td></tr>
             </table> 
         </aside>
 
@@ -165,7 +177,7 @@
 
             <div class="welcome-text">
                 <h3>Welcome to The Gates at Parkside Village</h3>
-                <p>A beautiful townhome community located across the street from Kennesaw Mountain National Battlefield Park and within easy walking distance of the square in historic downtown Marietta, Georgia.</p>
+                <p>A beautiful townhome community located across the street from <a href="https://www.nps.gov/kemo/index.htm" target="_blank">Kennesaw Mountain National Battlefield Park</a> and within easy walking distance of the square in historic downtown <a href="https://exploregeorgia.org/article/guide-to-marietta" target="_blank">Marietta</a>, Georgia.</p>
                 <hr> 
             </div>
 
