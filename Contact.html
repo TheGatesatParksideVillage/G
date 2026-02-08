@@ -20,14 +20,13 @@
             height: 35px;
         }
 
-        /* Makes the entire row clickable and matches Home page link style */
         .menu-table td a {
             display: block;
             width: 100%;
             height: 100%;
             padding-left: 15px;
             line-height: 35px;
-            color: #0000FF; /* Match Home Page Blue */
+            color: #0000FF; 
             text-decoration: none;
             font-family: "Times New Roman", Times, serif;
             font-weight: bold;
@@ -38,7 +37,7 @@
             background-color: #f2f2f2;
         }
 
-        /* Hover effect forces Red like Home page */
+        /* Hover effect forces Red */
         a:hover, a:hover font { 
             color: red !important; 
         }
@@ -67,8 +66,10 @@
         .main-container {
             background-color: #ffffff;
             display: flex;
+            flex-wrap: wrap;
             padding: 10px;
             gap: 20px;
+            justify-content: center;
         }
 
         .sidebar {
@@ -80,11 +81,10 @@
         .content-area {
             flex: 1;
             padding: 10px;
-            color: #000000; /* Standard Black Text */
+            color: #000000;
             line-height: 1.6;
         }
 
-        /* Matches the elegant date style from Home Page */
         .date-display {
             font-family: "Monotype Corsiva", cursive;
             font-size: 1.5rem;
@@ -98,10 +98,24 @@
             font-size: 18px;
         }
 
-        /* 3. Responsive Stack (Mobile Friendly) */
+        /* 3. Responsive Stack & Mobile Centering */
         @media (max-width: 800px) {
-            .main-container { flex-direction: column; }
-            .sidebar { flex: 1; min-width: 100%; }
+            .main-container { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+            .sidebar { 
+                flex: 1; 
+                width: 100%; 
+                min-width: 100%; 
+            }
+            .menu-table {
+                margin: 0 auto !important; /* Forces centering of the menu */
+                display: table;
+            }
+            .date-display, .contact-info {
+                text-align: center; /* Better readability on small screens */
+            }
         }
     </style>
 </head>
@@ -154,14 +168,16 @@
                 
                 <hr style="border: 0; border-top: 2px solid red; width: 100%; margin: 20px 0;">
 
-                <p><strong>Committees</strong></p>
+                <p><strong><center>Committees</center></strong></p>
                 <p><strong>Hospitality Committee:</strong> Promote a sense of community at The Gates.<br />
                 Contact <b>Marilyn Dover</b>, Chair <a href="mailto:msdover3294@aol.com" style="color: #0000FF;">msdover3294@aol.com</a></p>
                 
                 <p><strong>Grounds Committee:</strong> Appearance and maintenance of common areas.<br />
                 Kathy Kilgore, 404-402-3100, <a href="mailto:kathykilgore@comcast.net" style="color: #0000FF;">kathykilgore@comcast.net</a></p>
                 
-                <p><strong>Clubs</strong></p>
+<hr style="border: 0; border-top: 2px solid red; width: 100%; margin: 20px 0;">
+
+                <p><strong><center>Clubs</center></strong></p>
                 <p><strong>Book Club:</strong> Selection of different ages, cultures and backgrounds. Contact <b>Telia Weaver</b> <a href="mailto:tj.weaver621@gmail.com" style="color: #0000FF;">tj.weaver621@gmail.com</a></p>
                 <p><strong>Bunco:</strong> A fun girls’ night out once a month. Contact <b>Marilyn Dover,</b> <a href="mailto:msdover3294@aol.com" style="color: #0000FF;">msdover3294@aol.com</a></p>
             </div>
@@ -180,16 +196,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
