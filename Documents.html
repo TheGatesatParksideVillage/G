@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="heart.ico" />
     <title>The Gates at Parkside Village - Documents</title>
     <style type="text/css">
-        /* 1. The 3D Menu Box Styling (Matches Home & Contact) */
+        /* 1. The 3D Menu Box Styling */
         .menu-table {
             background-color: #ffffff;
             text-align: left;
@@ -17,17 +17,14 @@
 
         .menu-table td {
             padding: 0; 
-            height: 35px;
         }
 
-        /* Full-row clickable buttons */
+        /* Full-row clickable buttons - Tightened spacing */
         .menu-table td a {
             display: block;
             width: 100%;
-            height: 100%;
-            padding-left: 15px;
-            line-height: 35px;
-            color: #0000FF; /* Home Page Blue */
+            padding: 4px 0 4px 15px; /* Matches the original tighter look */
+            color: #0000FF; 
             text-decoration: none;
             font-family: "Times New Roman", Times, serif;
             font-weight: bold;
@@ -67,8 +64,10 @@
         .main-container {
             background-color: #ffffff;
             display: flex;
+            flex-wrap: wrap;
             padding: 10px;
             gap: 20px;
+            justify-content: center;
         }
 
         .sidebar {
@@ -85,11 +84,10 @@
             text-align: left;
         }
 
-        /* Matches the Home Page Image Style */
         .doc-feature-img {
             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
             border: 5px solid #F2F3F4;
-            margin-bottom: 20px;
+            margin: 10px 0 20px 0;
             max-width: 100%;
             height: auto;
         }
@@ -99,44 +97,61 @@
             font-size: 1.5rem;
             color: #000000;
             margin-bottom: 10px;
-            text-align: center;
+            text-align: left;
+        }
+
+        hr { 
+            border: 0; 
+            border-top: 2px solid red !important; 
+            width: 80%; 
+            margin: 20px auto; 
+            display: block;
         }
 
         /* List Styling */
         ul {
             list-style-type: square;
-            padding-left: 20px;
-        }
-
-       /* 1. Clean up the document links */
-        ul li a {
-            color: #0000FF;      /* Home Page Blue */
-            text-decoration: none; /* REMOVES UNDERLINES */
-            font-weight: bold;
-        }
-
-        /* 2. Hover effect for the document links */
-        ul li a:hover {
-            color: red !important;
-            text-decoration: underline; /* Optional: only shows when mouse is over it */
-        }
-
-        /* Keep your existing list spacing */
-        ul li {
-            margin-bottom: 2px; 
-            line-height: 1.2;
-        }
-
-        /* This removes the big gap at the very top of the list */
-        ul {
             margin-top: 5px; 
             padding-left: 25px; 
         }
 
-        /* 3. Responsive Stack for Phones */
+        ul li {
+            margin-bottom: 4px; 
+            line-height: 1.4;
+        }
+
+        ul li a {
+            color: #0000FF;      
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        ul li a:hover {
+            color: red !important;
+            text-decoration: underline;
+        }
+
+        /* 3. Responsive Fixes */
         @media (max-width: 800px) {
-            .main-container { flex-direction: column; }
-            .sidebar { flex: 1; min-width: 100%; }
+            .main-container { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+            .sidebar { 
+                flex: 1; 
+                width: 100%; 
+                min-width: 100%; 
+            }
+            .menu-table {
+                margin: 0 auto !important;
+                display: table;
+            }
+            .content-area {
+                width: 100%;
+            }
+            .date-display {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -174,7 +189,8 @@
                 <img src="thegatesatparksidevillage.png" class="doc-feature-img" alt="The Gates at Parkside Village" width="512" />
             </center>
             
-<div style="height: 3px; background-color: #FF0000; width: 80%; margin: 20px auto; border: none;"></div>
+            <hr>
+
             <h3 style="text-decoration: underline;">Community Rules, Regulations and General Information</h3>
             
             <ul>
