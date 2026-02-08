@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+HTML
+<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +8,7 @@
     <link rel="shortcut icon" href="heart.ico" />
     <title>The Gates at Parkside Village - Roster</title>
     <style type="text/css">
-        /* 1. The 3D Menu Styling */
+        /* 1. Tight 3D Menu Styling */
         .menu-table {
             background-color: #ffffff;
             text-align: left;
@@ -17,26 +19,23 @@
 
         .menu-table td {
             padding: 0; 
-            height: 28px; 
         }
 
         .menu-table td a {
             display: block;
             width: 100%;
-            height: 100%;
-            padding-left: 15px;
-            line-height: 28px;
+            padding: 4px 0 4px 15px; /* Tight vertical spacing */
             color: #0000FF;
             text-decoration: none;
             font-family: "Times New Roman", Times, serif;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .menu-table tr:hover { background-color: #f2f2f2; }
         a:hover { color: red !important; }
 
-        /* 2. General Layout & Wide Styling */
+        /* 2. General Layout Styling */
         body {
             background-color: #000000;
             margin: 0;
@@ -62,7 +61,7 @@
             display: flex;
             padding: 10px;
             gap: 20px;
-            align-items: stretch; /* Stretches gray sidebar to bottom */
+            align-items: stretch; 
         }
 
         .sidebar {
@@ -81,12 +80,13 @@
             text-align: center;
         }
 
-        /* 3. Feature Image & Links */
+        /* 3. Feature Image & Content */
         .feature-img {
             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
             border: 5px solid #794B15 !important;
             margin-bottom: 15px;
             max-width: 100%;
+            height: auto;
         }
 
         .red-line {
@@ -97,7 +97,6 @@
             border: none;
         }
 
-        /* Tighten Roster Bullet Points */
         ul {
             display: inline-block;
             text-align: left;
@@ -110,7 +109,7 @@
 
         ul li a {
             color: #0000FF;
-            text-decoration: none; /* No underlines as requested previously */
+            text-decoration: none;
             font-weight: bold;
         }
 
@@ -124,10 +123,26 @@
             margin-bottom: 10px;
         }
 
-        /* 4. Mobile Friendly */
+        /* 4. Mobile Friendly - Centering the Menu Box */
         @media (max-width: 800px) {
-            .main-container { flex-direction: column; }
-            .sidebar { flex: 1; min-width: 100%; }
+            .main-container { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+            .sidebar { 
+                flex: 1; 
+                width: 100%; 
+                min-width: 100%; 
+                padding-bottom: 20px;
+            }
+            /* Centers the menu specifically on mobile */
+            .menu-table {
+                margin: 0 auto !important;
+                display: table;
+            }
+            .content-area {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -140,17 +155,17 @@
         <aside class="sidebar">
             <center>
                 <img src="gates-logo_oval.png" width="260" alt="Logo">
+                <br><br>
+                <table border="5" bordercolor="#794B15" class="menu-table">
+                    <tr><td><a href="index.html">Home</a></td></tr>
+                    <tr><td><a href="Contact.html">Contact</a></td></tr>
+                    <tr><td><a href="News.html">News</a></td></tr>
+                    <tr><td><a href="Roster.html">Roster</a></td></tr>
+                    <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
+                    <tr><td><a href="Services.html">Services</a></td></tr>
+                    <tr><td><a href="Directions.html">Directions</a></td></tr>
+                </table> 
             </center>
-            <br>
-            <table border="5" bordercolor="#794B15" class="menu-table">
-                <tr><td><a href="index.html">Home</a></td></tr>
-                <tr><td><a href="Contact.html">Contact</a></td></tr>
-                <tr><td><a href="News.html">News</a></td></tr>
-                <tr><td><a href="Roster.html">Roster</a></td></tr>
-                <tr><td><a href="Documents.html">Forms and Documents</a></td></tr>
-                <tr><td><a href="Services.html">Services</a></td></tr>
-                <tr><td><a href="Directions.html">Directions</a></td></tr>
-            </table> 
         </aside>
 
         <main class="content-area">
@@ -192,18 +207,6 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
