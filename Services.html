@@ -1,5 +1,4 @@
-﻿HTML
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
@@ -23,13 +22,12 @@
         .menu-table td a {
             display: block;
             width: 100%;
-            /* Tight vertical padding (4px) to match other pages */
             padding: 4px 0 4px 15px; 
             color: #0000FF;
             text-decoration: none;
             font-family: "Times New Roman", Times, serif;
             font-weight: bold;
-            font-size: 18px; /* Standardized with other pages */
+            font-size: 18px;
         }
 
         .menu-table tr:hover { background-color: #f2f2f2; }
@@ -110,25 +108,30 @@
             margin-bottom: 20px;
         }
 
-        /* 4. Mobile Friendly - Centering the Menu Box */
+        /* 4. Mobile Friendly Fixes */
         @media (max-width: 800px) {
             .main-container { 
                 flex-direction: column; 
-                align-items: center; 
+                align-items: flex-start; /* Fixes top gap by snapping content to the top */
+                padding: 10px;
             }
             .sidebar { 
-                flex: 1; 
+                flex: none; 
                 width: 100%; 
                 min-width: 100%; 
-                padding-bottom: 20px;
+                padding: 10px 0 20px 0;
+                background-size: cover;
             }
-            /* This centers the menu specifically on mobile devices */
             .menu-table {
                 margin: 0 auto !important;
                 display: table;
             }
             .content-area { 
                 width: 100%; 
+                padding: 10px 0;
+            }
+            .date-display {
+                text-align: center;
             }
         }
     </style>
