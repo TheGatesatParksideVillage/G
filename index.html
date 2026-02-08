@@ -7,7 +7,7 @@
     <title>The Gates at Parkside Village</title>
     <style type="text/css">
 
-/* 1. Table & Shadow Effect */
+        /* 1. Table & Shadow Effect */
         .menu-table {
             background-color: #ffffff;
             text-align: left;
@@ -27,8 +27,8 @@
             display: block;
             width: 100%;
             height: 100%;
-            padding-left: 25px; /* Keeps text from touching the left edge */
-            line-height: 35px;  /* Centers text vertically */
+            padding-left: 25px; 
+            line-height: 35px;  
             color: #0000FF;
             text-decoration: none;
         }
@@ -47,12 +47,15 @@
             .mobile-table {
                 width: 100% !important;
                 max-width: 260px;
+                margin: 20px auto !important; /* Forces centering on mobile */
+                display: table; /* Ensures margin: auto works */
             }
             .main-container {
                 flex-direction: column;
+                align-items: center; /* Centers items for mobile */
             }
             .content {
-                text-align: left;
+                text-align: center;
             }
         }
 
@@ -83,6 +86,7 @@
             flex-wrap: wrap;
             padding: 10px;
             gap: 20px;
+            justify-content: center; /* Better alignment for wrapped items */
         }
 
         .sidebar {
@@ -106,14 +110,12 @@
             height: 200px;
             margin: 20px 0;
             width: 100%;
-            /* The 3D shadow */
             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
         }
 
-        /* This ensures your red line stays visible and styled */
         hr { 
             border: 0; 
-            border-top: 2px solid red !important; /* Added !important to protect it */
+            border-top: 2px solid red !important; 
             width: 80%; 
             margin: 20px auto; 
             display: block;
@@ -124,15 +126,6 @@
             color: #000;
             line-height: 1.6;
         }
-
-            /* 6. MOBILE OVERRIDE - Solves the phone issue */
-        @media screen and (max-width: 768px) {
-            body { padding: 0; }
-            .outer-layout-table, .outer-layout-table tbody, .outer-layout-table tr, .outer-layout-table td {
-    
-
-
-
     </style>
 </head>
 <body>
@@ -146,7 +139,7 @@
                 <img src="gates-logo_oval.png" width="260" alt="Logo">
             </center>
             <br>
-            <table border="5" bordercolor="#794B15" cellpadding="5" width="260" class="menu-table">
+            <table border="5" bordercolor="#794B15" width="260" class="menu-table">
                 <tr><td><b><a href="index.html">Home</a></b></td></tr>
                 <tr><td><b><a href="Contact.html">Contact</a></b></td></tr>
                 <tr><td><b><a href="News.html">News</a></b></td></tr>
@@ -176,19 +169,15 @@
                 <hr> 
             </div>
 
-            <center>
-    <table border="5" bordercolor="#794B15" cellpadding="0" width="260" class="menu-table mobile-table">
-        <tr>
-            <td>
-                <center><a href="https://thegatesatparksidevillage.github.io/z/" target="_blank">Reflections of Gazebo 2010</a></center>
-            </td>
-        </tr>
-    </table>
-</center></b>
+            <div style="width: 100%; display: flex; justify-content: center;">
+                <table border="5" bordercolor="#794B15" width="260" class="menu-table mobile-table">
+                    <tr>
+                        <td style="text-align: center;">
+                            <a href="https://thegatesatparksidevillage.github.io/z/" target="_blank" style="padding-left: 0;">Reflections of Gazebo 2010</a>
                         </td>
                     </tr>
                 </table>
-            </center>
+            </div>
         </main>
     </div>
 
