@@ -13,7 +13,7 @@
             box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
             border-collapse: collapse;
             width: 260px;
-            margin: 0 auto; /* Centers the table within the sidebar */
+            margin: 0 auto; 
         }
 
         .menu-table td {
@@ -77,7 +77,7 @@
             padding: 10px;
             background-repeat: repeat-y;
             background-size: 100% auto;
-            text-align: center; /* This replaces the <center> tag */
+            text-align: center;
         }
 
         .content-area {
@@ -86,7 +86,7 @@
             color: #000000;
             line-height: 1.6;
             min-width: 0;
-            text-align: left; /* Forces text to stay left */
+            text-align: left; /* Ensures desktop stays left */
         }
 
         .date-display {
@@ -101,12 +101,20 @@
             text-align: left;
             font-size: 18px;
         }
+        
+        /* Specific header style */
+        .section-header {
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            font-size: 20px;
+            margin: 15px 0 5px 0;
+        }
 
-        /* 3. Mobile Friendly - Layout Adjustment */
+        /* 3. Mobile Friendly - FIXED */
         @media (max-width: 800px) {
             .main-container { 
                 flex-direction: column; 
-                padding: 10px;
             }
             .sidebar { 
                 flex: none; 
@@ -116,24 +124,17 @@
             }
             .content-area {
                 width: 100%;
-                padding: 10px 0;
+                padding: 10px 5px;
+                text-align: left; /* Explicitly keep text left on mobile */
             }
-            /* Optional: keep these centered on mobile for better looks */
-            .date-display, .contact-info, .section-title {
-                text-align: center;
+            .date-display {
+                text-align: center; /* Date stays centered on mobile */
             }
+            /* Centers ONLY images on mobile, not text */
             .contact-info img {
                 display: block;
                 margin: 0 auto 10px auto;
             }
-        }
-        
-        .section-title {
-            font-weight: bold;
-            text-align: center;
-            display: block;
-            font-size: 20px;
-            margin: 10px 0;
         }
     </style>
 </head>
@@ -183,7 +184,7 @@
                 
                 <hr style="border: 0; border-top: 2px solid red; width: 100%; margin: 20px 0;">
 
-                <span class="section-title">Committees</span>
+                <span class="section-header">Committees</span>
                 <p><strong>Hospitality Committee:</strong> Promote a sense of community at The Gates.<br />
                 Contact <b>Marilyn Dover</b>, Chair <a href="mailto:msdover3294@aol.com" style="color: #0000FF;">msdover3294@aol.com</a></p>
                 
@@ -192,7 +193,7 @@
                 
                 <hr style="border: 0; border-top: 2px solid red; width: 100%; margin: 20px 0;">
 
-                <span class="section-title">Clubs</span>
+                <span class="section-header">Clubs</span>
                 <p><strong>Book Club:</strong> Selection of different ages, cultures and backgrounds. Contact <b>Telia Weaver</b> <a href="mailto:tj.weaver621@gmail.com" style="color: #0000FF;">tj.weaver621@gmail.com</a></p>
                 <p><strong>Bunco:</strong> A fun girls’ night out once a month. Contact <b>Marilyn Dover,</b> <a href="mailto:msdover3294@aol.com" style="color: #0000FF;">msdover3294@aol.com</a></p>
             </div>
