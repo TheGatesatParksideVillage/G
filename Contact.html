@@ -6,6 +6,9 @@
     <link rel="shortcut icon" href="heart.ico" />
     <title>The Gates at Parkside Village - Contact</title>
     <style type="text/css">
+        /* Global Box Sizing for better mobile handling */
+        * { box-sizing: border-box; }
+
         /* 1. Tight 3D Menu Styling */
         .menu-table {
             background-color: #ffffff;
@@ -86,7 +89,7 @@
             color: #000000;
             line-height: 1.6;
             min-width: 0;
-            text-align: left; /* Ensures desktop stays left */
+            text-align: left;
         }
 
         .date-display {
@@ -102,7 +105,6 @@
             font-size: 18px;
         }
         
-        /* Specific header style */
         .section-header {
             font-weight: bold;
             text-align: center;
@@ -111,7 +113,7 @@
             margin: 15px 0 5px 0;
         }
 
-        /* 3. Mobile Friendly - FIXED */
+        /* 3. Mobile Friendly */
         @media (max-width: 800px) {
             .main-container { 
                 flex-direction: column; 
@@ -125,15 +127,21 @@
             .content-area {
                 width: 100%;
                 padding: 10px 5px;
-                text-align: left; /* Explicitly keep text left on mobile */
             }
             .date-display {
-                text-align: center; /* Date stays centered on mobile */
+                text-align: center;
             }
-            /* Centers ONLY images on mobile, not text */
             .contact-info img {
                 display: block;
                 margin: 0 auto 10px auto;
+            }
+        }
+
+        /* Small mobile table handling */
+        @media (max-width: 600px) {
+            .mobile-table {
+                width: 100% !important;
+                max-width: 260px;
             }
         }
     </style>
@@ -158,12 +166,8 @@
         </aside>
 
         <main class="content-area">
-            <div class="date-display">
-                <script>
-                    const now = new Date();
-                    document.write(now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
-                </script>
-            </div>
+            <div class="date-display" id="current-date">
+                </div>
 
             <div class="contact-info">
                 <img src="sentry.gif" width="217" height="50" alt="Sentry Management" /><br />
@@ -184,31 +188,52 @@
                 
                 <hr style="border: 0; border-top: 2px solid red; width: 100%; margin: 20px 0;">
 
-                <span class="section-header">Committees</span>
+                <span class="section-header"><h2>Committees</h2></span>
                 <p><strong>Hospitality Committee:</strong> Promote a sense of community at The Gates.<br />
                 Contact <b>Marilyn Dover</b>, Chair <a href="mailto:msdover3294@aol.com" style="color: #0000FF;">msdover3294@aol.com</a></p>
                 
-                <p><strong>Grounds Committee:</strong> Appearance and maintenance of common areas.<br />
-                Kathy Kilgore, 404-402-3100, <a href="mailto:kathykilgore@comcast.net" style="color: #0000FF;">kathykilgore@comcast.net</a></p>
+               <table border="5" bordercolor="#794B15" cellpadding="0" class="menu-table mobile-table" style="margin: 10px auto; width: 120px;">
+    <tr>
+        <td style="height: 35px;">
+            <a href="https://thegatesatparksidevillage.github.io/z/" target="_blank" style="padding-left: 0; text-align: center;">Gazebo</a>
+        </td>
+    </tr>
+</table>
+
+<hr style="border: 0; border-top: 1px solid #794B15; width: 60%; margin: 20px auto; opacity: 0.5;">
+
+<p><strong>Grounds Committee:</strong> Appearance and maintenance of common areas.<br />
+Kathy Kilgore, 404-402-3100, <a href="mailto:kathykilgore@comcast.net" style="color: #0000FF;">kathykilgore@comcast.net</a></p>
                 
                 <hr style="border: 0; border-top: 2px solid red; width: 100%; margin: 20px 0;">
 
-                <span class="section-header">Clubs</span>
+                <span class="section-header"><h2>Clubs</h2></span>
                 <p><strong>Book Club:</strong> Selection of different ages, cultures and backgrounds. Contact <b>Telia Weaver</b> <a href="mailto:tj.weaver621@gmail.com" style="color: #0000FF;">tj.weaver621@gmail.com</a></p>
                 <p><strong>Bunco:</strong> A fun girls’ night out once a month. Contact <b>Marilyn Dover,</b> <a href="mailto:msdover3294@aol.com" style="color: #0000FF;">msdover3294@aol.com</a></p>
             </div>
         </main>
     </div>
 
+
+
     <img src="gates-top.png" class="decorative-bar" alt="border">
 </div>
 
 <div style="text-align: center; margin-top: 20px;">
     <span style="color: #a6acaf; font-family: 'Great Vibes', cursive; font-size: 1.25rem;">
-        Site Modified: 
-        <script>document.write(document.lastModified);</script>
+        Site Modified: <span id="last-mod"></span>
     </span>
 </div>
+
+<script>
+    // Set Current Date
+    const dateBox = document.getElementById('current-date');
+    const now = new Date();
+    dateBox.innerHTML = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+    // Set Last Modified
+    document.getElementById('last-mod').innerHTML = document.lastModified;
+</script>
 
 </body>
 </html>
